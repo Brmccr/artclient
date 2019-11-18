@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:4000'
 };
 
 /*
@@ -14,3 +15,10 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+
+// The development environment config contains variables required to run the application in development. 
+// Environment config is accessed by importing the environment object into any Angular service of 
+// component with the line import { environment } from '@environments/environment' and accessing properties on the 
+// environment object, see the user service for an example.
