@@ -21,4 +21,12 @@ export class AuthService {
       console.log(data, "is what we got from the server")
     })
   }
+  getUserSignIn(username, password) {
+    return this.http.post('http://localhost:3000/user/login', {
+      username,
+      password
+    }).subscribe(data => {
+      console.log(data, "is what we got from the server")
+    })
+  }
 }

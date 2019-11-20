@@ -12,7 +12,7 @@ export class SignupInComponent implements OnInit {
 
   ngOnInit() {
   }
-  signinUser(event) {
+  signupUser(event) {
     event.preventDefault()
     const target = event.target
     const username = target.querySelector('#username').value
@@ -23,5 +23,12 @@ export class SignupInComponent implements OnInit {
 
     this.Auth.getUserDetails(username, password, displayname, firstname, lastname)
     console.log(username, password, displayname, firstname, lastname)
+  }
+  signinUser(event) {
+    const target = event.target
+    const username = target.querySelector('#username').value
+    const password = target.querySelector('#password').value
+    this.Auth.getUserSignIn(username, password)
+    console.log(username, password)
   }
 }

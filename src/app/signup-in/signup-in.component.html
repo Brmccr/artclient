@@ -1,6 +1,6 @@
 <p>signup-in works!</p>
 
-<form (submit)="signinUser($event)">
+<form (submit)="signupUser($event)">
 <input type="text" placeholder="Username" id="username">
 <input type="password" placeholder="Password" id="password">
 <input type="text" placeholder="DisplayName" id="displayname">
@@ -8,3 +8,11 @@
 <input type="text" placeholder="LastName" id="lastname">
 <input type="submit" value="submit">
 </form>
+
+<br>
+<br>
+<form (submit)="signinUser($event)">
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <input type="submit" value="submit">
+        </form>
