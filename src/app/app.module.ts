@@ -57,6 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments/comments.component';
 
+
 const appRoutes: Routes = [
   {path: 'display', component: ArtdisplayComponent},
   {path: 'detail', component: ArtDetailComponent},
