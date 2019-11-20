@@ -1,15 +1,35 @@
 .example-card{
-    width: 27%;
+    width: 28%;
     height: auto;
-    padding: 22px;
-    margin: 32px;
+    padding: 29px;
+    margin: 25px;
 }
 
 .imgcards{
     display: flex;
     
 }
-/* img{
-    width: 15%;
-    height: auto;
-} */
+
+.example-card:hover{
+        transform: scale(1.05);
+        transition-duration: 2000ms;
+      }
+
+.cardimg{
+    height: '15em';
+    width: 'auto'
+}
+
+.src{
+    height: '15em';
+    width: 'auto'
+}
+
+.mat-card-image{
+    height: '15em' !important;
+    width: 'auto' !important;
+}
+img{
+    height: '15em';
+    width: 'auto'
+}
