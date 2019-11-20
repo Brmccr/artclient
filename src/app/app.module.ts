@@ -53,6 +53,9 @@ import { DigitalComponent } from './digital/digital.component';
 import { PaintingComponent } from './painting/painting.component';
 import { DrawingComponent } from './drawing/drawing.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 const appRoutes: Routes = [
   {path: 'display', component: ArtdisplayComponent},
   {path: 'detail', component: ArtDetailComponent},
@@ -114,8 +117,9 @@ const appRoutes: Routes = [
     CarouselModule,
     WavesModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
-
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
