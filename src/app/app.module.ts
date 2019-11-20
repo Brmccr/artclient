@@ -56,6 +56,9 @@ import { DrawingComponent } from './drawing/drawing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments/comments.component';
+import { SignupInComponent } from './signup-in/signup-in.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 
 const appRoutes: Routes = [
@@ -64,7 +67,9 @@ const appRoutes: Routes = [
   {path: 'photography', component: PhotographyComponent},
   {path: 'digital', component: DigitalComponent},
   {path: 'painting', component: PaintingComponent},
-  {path: 'drawing', component: DrawingComponent}
+  {path: 'drawing', component: DrawingComponent},
+  {path: 'signup-in', component: SignupInComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
@@ -79,6 +84,8 @@ const appRoutes: Routes = [
     PaintingComponent,
     DrawingComponent,
     CommentsComponent,
+    SignupInComponent,
+    AdminComponent
     // BrowserModule,
   ],
   imports: [
