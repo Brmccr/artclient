@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 // For MDB Angular Free
 
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -48,7 +48,19 @@ import { ArtdisplayComponent } from './artdisplay/artdisplay.component';
 import { ArtcarouselComponent } from './artcarousel/artcarousel.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ArtDetailComponent } from './art-detail/art-detail.component';
+import { PhotographyComponent } from './photography/photography.component';
+import { DigitalComponent } from './digital/digital.component';
+import { PaintingComponent } from './painting/painting.component';
+import { DrawingComponent } from './drawing/drawing.component';
 
+const appRoutes: Routes = [
+  {path: 'display', component: ArtdisplayComponent},
+  {path: 'detail', component: ArtDetailComponent},
+  {path: 'photography', component: PhotographyComponent},
+  {path: 'digital', component: DigitalComponent},
+  {path: 'painting', component: PaintingComponent},
+  {path: 'drawing', component: DrawingComponent}
+];
 
 @NgModule({
   declarations: [
@@ -57,6 +69,10 @@ import { ArtDetailComponent } from './art-detail/art-detail.component';
     ArtcarouselComponent,
     NavBarComponent,
     ArtDetailComponent,
+    PhotographyComponent,
+    DigitalComponent,
+    PaintingComponent,
+    DrawingComponent,
     // BrowserModule,
   ],
   imports: [
@@ -98,9 +114,7 @@ import { ArtDetailComponent } from './art-detail/art-detail.component';
     CarouselModule,
     WavesModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {path: '', component: ArtdisplayComponent}
-    ])
+    RouterModule.forRoot(appRoutes)
 
   ],
   providers: [],
