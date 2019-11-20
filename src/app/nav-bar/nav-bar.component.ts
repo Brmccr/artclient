@@ -9,11 +9,12 @@ import {ArtService} from '../art.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private _artService: ArtService) {
-    this._artService.getArtDigital();
-   }
+  responsephotography ;
+  constructor(private _artService: ArtService) {}
 
   ngOnInit() {
   }
-
+  getArtDigital(): void {
+    this._artService.getArtDigital().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
+  }
 }

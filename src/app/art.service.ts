@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Observable} from "rxjs"
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,19 +10,12 @@ export class ArtService {
 
   responsephotography: any;
 
-  getArtPhotography() {
-    this.http.get('http://localhost:3000/art/artgenrephotography')
-    .subscribe((responsephotography) => {
-      this.responsephotography = responsephotography;
-      console.log(this.responsephotography)
-    })
+  getArtPhotography(): Observable<any> {
+    return this.http.get('http://localhost:3000/art/artgenrephotography')
+    
   }
-  getArtDigital() {
-    this.http.get('http://localhost:3000/art/artgenredigital')
-    .subscribe((responsephotography) => {
-      this.responsephotography = responsephotography;
-      console.log(this.responsephotography)
-    })
+  getArtDigital(): Observable<any> {
+    return this.http.get('http://localhost:3000/art/artgenredigital')
   }
   getArtDrawing() {
     this.http.get('http://localhost:3000/art/artgenredrawing')

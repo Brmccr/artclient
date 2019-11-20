@@ -11,4 +11,24 @@
   <a [routerLink]="['/drawing']" class="button fancy-button"><i class="material-icons"></i>Sketches</a>
   <a [routerLink]="['/digital']" class="button fancy-button"><i class="material-icons"></i>Digital Art</a>
   <a [routerLink]="['/detail']"class="button fancy-button"><i class="material-icons"></i>Art Details</a>
-  <button class= "selectbutton" mat-raised-button (click)="getArtDigital()">Get Photography</button>
+  <button class= "selectbutton" mat-raised-button (click)="getArtDigital()">Get Digital</button>
+
+
+  <div *ngFor="let responsephotography of responsephotography">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{responsephotography?.title}}</mat-card-title>
+          <mat-card-subtitle>{{responsephotography?.artist}}</mat-card-subtitle>
+        </mat-card-header>
+        <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>{{responsephotography?.price}}</p>
+          <p>Genre: Digital Art</p>
+          <p>{{responsephotography?.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button [routerLink]="['/detail']" mat-button>More Details</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
