@@ -55,6 +55,7 @@ import { DrawingComponent } from './drawing/drawing.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommentsComponent } from './comments/comments.component';
 
 const appRoutes: Routes = [
   {path: 'display', component: ArtdisplayComponent},
@@ -76,6 +77,7 @@ const appRoutes: Routes = [
     DigitalComponent,
     PaintingComponent,
     DrawingComponent,
+    CommentsComponent,
     // BrowserModule,
   ],
   imports: [

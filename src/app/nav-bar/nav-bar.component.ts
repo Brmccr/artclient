@@ -17,4 +17,7 @@ export class NavBarComponent implements OnInit {
   getArtDigital(): void {
     this._artService.getArtDigital().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
   }
+  getArtPhotography(): void {
+    this._artService.getArtPhotography().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
+  }
 }

@@ -12,23 +12,14 @@ export class ArtService {
 
   getArtPhotography(): Observable<any> {
     return this.http.get('http://localhost:3000/art/artgenrephotography')
-    
   }
   getArtDigital(): Observable<any> {
     return this.http.get('http://localhost:3000/art/artgenredigital')
   }
-  getArtDrawing() {
-    this.http.get('http://localhost:3000/art/artgenredrawing')
-    .subscribe((responsephotography) => {
-      this.responsephotography = responsephotography;
-      console.log(this.responsephotography)
-    })
+  getArtDrawing(): Observable<any> {
+    return this.http.get('http://localhost:3000/art/artgenredrawing')
   }
-  getArtPainting() {
-    this.http.get('http://localhost:3000/art/artgenrepaintings')
-    .subscribe((responsephotography) => {
-      this.responsephotography = responsephotography;
-      console.log(this.responsephotography)
-    })
+  getArtPainting(): Observable<any> {
+    return this.http.get('http://localhost:3000/art/artgenrepaintings')
   }
 }

@@ -11,11 +11,8 @@ export class CommentsService {
 
   responsecomments: any;
 
-  getArtPhotography(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgenrephotography')
+  getArtComments(): Observable<any> {
+    return this.http.get('http://localhost:3000/comment/commentsonart')
     
-  }
-  getArtDigital(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgenredigital')
   }
 }
