@@ -17,7 +17,6 @@ export class CommentsService {
   }
 
   postComment(paragraph) {
-    //post these details to server and return user info
     return this.http.post('http://localhost:3000/comment/commentpost', {
       paragraph
     }).subscribe(data => {
