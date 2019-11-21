@@ -1,47 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { first } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 
-import { User } from '../models/user';
-import { UserService } from '../services/user.service';
-import { AuthenticationService } from '../services/authentication.service';
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
 
-@Component({ templateUrl: 'home.component.html' })
-export class HomeComponent implements OnInit, OnDestroy {
-    currentUser: User;
-    currentUserSubscription: Subscription;
-    users: User[] = [];
+  constructor() { }
 
-    constructor(
-        private authenticationService: AuthenticationService,
-        private userService: UserService
-    ) {
-        this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
-            this.currentUser = user;
-        });
-    }
+  ngOnInit() {
+  }
 
-    ngOnInit() {
-        this.loadAllUsers();
-    }
-
-    ngOnDestroy() {
-        // unsubscribe to ensure no memory leaks
-        this.currentUserSubscription.unsubscribe();
-    }
-
-    deleteUser(id: number) {
-        this.userService.delete(id).pipe(first()).subscribe(() => {
-            this.loadAllUsers()
-        });
-    }
-
-    private loadAllUsers() {
-        this.userService.getAll().pipe(first()).subscribe(users => {
-            this.users = users;
-        });
-    }
 }
-
-// The home component defines an angular 8 component that gets all users from the user service 
-// and makes them available to the template via a users array property.

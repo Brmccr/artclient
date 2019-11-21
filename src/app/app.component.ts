@@ -1,22 +1,42 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ArtService } from './art.service';
+import { HttpClient } from '@angular/common/http';
 
-import { AuthenticationService } from './services/authentication.service';
-import { User } from './models/user';
+import { AuthService } from './auth.service';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
-    currentUser: User;
+  title = 'artclient';
+  constructor(private http: HttpClient ) {}
 
-    constructor(
-        private router: Router,
-        private authenticationService: AuthenticationService
-    ) {
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-    }
+  responsephotography: any;
 
-    logout() {
-        this.authenticationService.logout();
-        this.router.navigate(['/login']);
-    }
+  getArtPhotography() {
+    this.http.get('http://localhost:3000/art/artgenrephotography')
+    .subscribe((responsephotography) => {
+      this.responsephotography = responsephotography;
+      console.log(this.responsephotography)
+    })
+  }
+  getArtDigital() {
+    this.http.get('http://localhost:3000/art/artgenredigital')
+    .subscribe((responsephotography) => {
+      this.responsephotography = responsephotography;
+      console.log(this.responsephotography)
+    })
+  }
+  getArtDrawing() {
+    this.http.get('http://localhost:3000/art/artgenredrawing')
+    .subscribe((responsephotography) => {
+      this.responsephotography = responsephotography;
+      console.log(this.responsephotography)
+    })
+  }
+  getArtPainting() {
+    this.http.get('http://localhost:3000/art/artgenrepaintings')
+    .subscribe((responsephotography) => {
+      this.responsephotography = responsephotography;
+      console.log(this.responsephotography)
+    })
+  }
 }

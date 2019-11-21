@@ -1,0 +1,18 @@
+<h2>Sign Up</h2>
+
+<form class="signupForm" (submit)="signupUser($event)">
+<input class="inputField"  type="text" placeholder="Email" id="username">
+<input class="inputField"  type="password" placeholder="Password" id="password">
+<input class="inputField"  type="text" placeholder="DisplayName" id="displayname">
+<input class="inputField"  type="text" placeholder="FirstName" id="firstname">
+<input class="inputField"  type="text" placeholder="LastName" id="lastname">
+<input class="button"  type="submit" value="submit">
+</form>
+
+<br>
+<br>
+<form class="button" (submit)="signinUser($event)">
+        <input class="inputField" type="text" placeholder="Username" >
+        <input class="inputField"  type="password" placeholder="Password" >
+        <input class="inputField"  type="submit" value="submit">
+        </form>
