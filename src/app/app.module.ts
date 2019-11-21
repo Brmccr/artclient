@@ -58,10 +58,12 @@ import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments/comments.component';
 import { SignupInComponent } from './signup-in/signup-in.component';
 import { AdminComponent } from './admin/admin.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'display', component: ArtdisplayComponent},
   {path: 'detail', component: ArtDetailComponent},
   {path: 'photography', component: PhotographyComponent},
@@ -85,7 +87,8 @@ const appRoutes: Routes = [
     DrawingComponent,
     CommentsComponent,
     SignupInComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent
     // BrowserModule,
   ],
   imports: [
