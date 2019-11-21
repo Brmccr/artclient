@@ -2,6 +2,11 @@
 
 <button class= "selectbutton" mat-raised-button (click)="getArtComments()">Get Comments</button>
 
+<form (submit)="signupUser($event)">
+        <input type="text" placeholder="Paragraph" id="paragraph">
+        <input type="submit" value="submit">
+        </form>
+
 
 <div *ngFor="let responsecomments of responsecomments">
         <h6>{{responsecomments?.comments[0]?.paragraph}}</h6>

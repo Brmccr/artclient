@@ -17,4 +17,17 @@ export class CommentsComponent implements OnInit {
   getArtComments(): void {
     this._commentsService.getArtComments().subscribe(res => {this.responsecomments = res; console.log(this.responsecomments)});
   }
+
+  // signupUser(event) {
+  //   event.preventDefault()
+  //   const target = event.target
+  //   const username = target.querySelector('#username').value
+  //   const password = target.querySelector('#password').value
+  //   const displayname = target.querySelector('#displayname').value
+  //   const firstname = target.querySelector('#firstname').value
+  //   const lastname = target.querySelector('#lastname').value
+
+  //   this.Auth.getUserDetails(username, password, displayname, firstname, lastname)
+  //   console.log(username, password, displayname, firstname, lastname)
+  // }
 }

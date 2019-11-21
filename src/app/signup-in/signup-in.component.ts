@@ -21,14 +21,20 @@ export class SignupInComponent implements OnInit {
     const firstname = target.querySelector('#firstname').value
     const lastname = target.querySelector('#lastname').value
 
-    this.Auth.getUserDetails(username, password, displayname, firstname, lastname)
+    this.Auth.getUserDetails(username, password, displayname, firstname, lastname).subscribe(res => {
+      console.log(res)
+      localStorage.setItem('token', res.sessionToken)
+    })
     console.log(username, password, displayname, firstname, lastname)
   }
   signinUser(event) {
     const target = event.target
     const username = target.querySelector('#username').value
     const password = target.querySelector('#password').value
-    this.Auth.getUserSignIn(username, password)
+    this.Auth.getUserSignIn(username, password).subscribe(res => {
+      console.log(res)
+      localStorage.setItem('token', res.sessionToken)
+    })
     console.log(username, password)
   }
 }

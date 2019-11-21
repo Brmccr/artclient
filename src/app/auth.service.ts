@@ -7,9 +7,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
+  private loggedinStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false')
+  
   constructor(private http: HttpClient) { }
 
-  getUserDetails(username, password, displayname, firstname, lastname) {
+  setLoggedIn(value: boolean) {
+    this.loggedinStatus = value
+    localStorage.setItem('loggedIn', 'true')
+  }
+
+  get isLoggedIn() {
+    return JSON.parse(localStorage.getItem('loggedIn') || this.loggedinStatus.toString())
+  }
+
+  getUserDetails(username, password, displayname, firstname, lastname):any {
     //post these details to server and return user info
     return this.http.post('http://localhost:3000/user/register', {
       username,
@@ -17,16 +28,12 @@ export class AuthService {
       displayname,
       firstname,
       lastname
-    }).subscribe(data => {
-      console.log(data, "is what we got from the server")
     })
   }
-  getUserSignIn(username, password) {
+  getUserSignIn(username, password):any {
     return this.http.post('http://localhost:3000/user/login', {
       username,
       password
-    }).subscribe(data => {
-      console.log(data, "is what we got from the server")
     })
   }
 }
