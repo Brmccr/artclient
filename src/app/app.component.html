@@ -1,5 +1,43 @@
 <app-nav-bar></app-nav-bar>
+<app-admin></app-admin>
 <router-outlet></router-outlet>
 <!-- <app-art-detail></app-art-detail> -->
 <!-- <app-artcarousel></app-artcarousel> -->
-<app-artdisplay></app-artdisplay>
+<!-- <app-artdisplay></app-artdisplay> -->
+<!-- <button class= "selectbutton" mat-raised-button (click)="getArtPhotography()">Get Photography</button>
+
+getArtPhotography()
+
+<button class= "selectbutton" mat-raised-button (click)="getArtDigital()">Get Digital</button>
+getArtDigital() -->
+<!-- <div *ngFor="let responsephotography of responsephotography">
+        
+    <ul>
+      <li><span>Title : {{responsephotography?.title}}</span></li>
+      <br>
+  <li><span>Artist : {{responsephotography?.artist}}</span></li>
+      <br>
+      <li><span>Price : {{responsephotography?.price}}</span></li>
+</ul>
+</div> -->
+
+<div *ngFor="let responsephotography of responsephotography">
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{responsephotography?.title}}</mat-card-title>
+      <mat-card-subtitle>{{responsephotography?.artist}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>{{responsephotography?.price}}</p>
+      <p>Genre: Digital Art</p>
+      <p>{{responsephotography?.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [routerLink]="['/detail']" mat-button>More Details</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

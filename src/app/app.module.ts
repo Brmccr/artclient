@@ -52,6 +52,11 @@ import { PhotographyComponent } from './photography/photography.component';
 import { DigitalComponent } from './digital/digital.component';
 import { PaintingComponent } from './painting/painting.component';
 import { DrawingComponent } from './drawing/drawing.component';
+import { AdminComponent } from '../app/admin/admin.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommentsComponent } from './comments/comments.component';
 
 const appRoutes: Routes = [
   {path: 'display', component: ArtdisplayComponent},
@@ -73,6 +78,8 @@ const appRoutes: Routes = [
     DigitalComponent,
     PaintingComponent,
     DrawingComponent,
+    CommentsComponent,
+    AdminComponent
     // BrowserModule,
   ],
   imports: [
@@ -114,8 +121,9 @@ const appRoutes: Routes = [
     CarouselModule,
     WavesModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
-
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
