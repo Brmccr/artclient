@@ -59,6 +59,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { SignupInComponent } from './signup-in/signup-in.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -71,7 +72,8 @@ const appRoutes: Routes = [
   {path: 'painting', component: PaintingComponent},
   {path: 'drawing', component: DrawingComponent},
   {path: 'signup-in', component: SignupInComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -88,7 +90,8 @@ const appRoutes: Routes = [
     CommentsComponent,
     SignupInComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent
     // BrowserModule,
   ],
   imports: [

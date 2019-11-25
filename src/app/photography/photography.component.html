@@ -3,18 +3,18 @@
 <!-- <button class= "selectbutton" mat-raised-button (click)="getArtPhotography()">Get Photography</button> -->
 
 <div class="imgcards">
-<div *ngFor="let responsephotography of responsephotography">
+<div *ngFor="let response of responsephotography">
     <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{responsephotography?.title}}</mat-card-title>
-          <mat-card-subtitle>{{responsephotography?.artist}}</mat-card-subtitle>
+          <mat-card-title>{{response?.title}}</mat-card-title>
+          <mat-card-subtitle>{{response?.artist}}</mat-card-subtitle>
         </mat-card-header>
-        <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
+        <img class="cardimg" mat-card-image src="{{response?.img}}" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <p>{{responsephotography?.price}}</p>
+          <p>{{response?.price}}</p>
           <p>Genre: Digital Art</p>
-          <p>{{responsephotography?.description}}</p>
+          <p>{{response?.description}}</p>
         </mat-card-content>
         <mat-card-actions>
           <button [routerLink]="['/detail']" mat-button>More Details</button>
