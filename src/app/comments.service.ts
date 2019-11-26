@@ -12,13 +12,12 @@ export class CommentsService {
   responsecomments: any;
 
   getArtComments(): Observable<any> {
-    return this.http.get('http://localhost:3000/comment/commentsonart')
+    return this.http.get('http://localhost:3001/comment/commentsonart')
     
   }
 
   postComment(paragraph) {
-    //post these details to server and return user info
-    return this.http.post('http://localhost:3000/comment/commentpost', {
+    return this.http.post('http://localhost:3001/comment/commentpost', {
       paragraph
     }).subscribe(data => {
       console.log(data, "is what we got from the server")

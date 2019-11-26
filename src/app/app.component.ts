@@ -12,28 +12,28 @@ export class AppComponent {
   responsephotography: any;
 
   getArtPhotography() {
-    this.http.get('http://localhost:3000/art/artgenrephotography')
+    this.http.get('http://localhost:3001/art/artgenrephotography')
     .subscribe((responsephotography) => {
       this.responsephotography = responsephotography;
       console.log(this.responsephotography)
     })
   }
   getArtDigital() {
-    this.http.get('http://localhost:3000/art/artgenredigital')
+    this.http.get('http://localhost:3001/art/artgenredigital')
     .subscribe((responsephotography) => {
       this.responsephotography = responsephotography;
       console.log(this.responsephotography)
     })
   }
   getArtDrawing() {
-    this.http.get('http://localhost:3000/art/artgenredrawing')
+    this.http.get('http://localhost:3001/art/artgenredrawing')
     .subscribe((responsephotography) => {
       this.responsephotography = responsephotography;
       console.log(this.responsephotography)
     })
   }
   getArtPainting() {
-    this.http.get('http://localhost:3000/art/artgenrepaintings')
+    this.http.get('http://localhost:3001/art/artgenrepaintings')
     .subscribe((responsephotography) => {
       this.responsephotography = responsephotography;
       console.log(this.responsephotography)

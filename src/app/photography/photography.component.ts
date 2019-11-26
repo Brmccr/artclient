@@ -10,11 +10,14 @@ import {ArtService} from '../art.service';
 })
 export class PhotographyComponent implements OnInit {
 
+  regularDistribution = 100 / 4 + '%';
   responsephotography ;
   constructor(private _artService: ArtService) {}
 
   ngOnInit() {
+    this.getArtPhotography();
   }
+  
   getArtPhotography(): void {
     this._artService.getArtPhotography().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
   }

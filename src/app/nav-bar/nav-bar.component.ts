@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtService} from '../art.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,10 +9,10 @@ import {ArtService} from '../art.service';
   providers: [ArtService]
 })
 export class NavBarComponent implements OnInit {
-
+  
   responsephotography ;
   constructor(private _artService: ArtService) {}
-
+  
   ngOnInit() {
   }
   getArtDigital(): void {

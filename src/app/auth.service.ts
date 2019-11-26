@@ -7,22 +7,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  private loggedinStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false')
+  // private loggedinStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false')
   
   constructor(private http: HttpClient) { }
 
-  setLoggedIn(value: boolean) {
-    this.loggedinStatus = value
-    localStorage.setItem('loggedIn', 'true')
-  }
+  // setLoggedIn(value: boolean) {
+  //   this.loggedinStatus = value
+  //   localStorage.setItem('loggedIn', 'true')
+  // }
 
-  get isLoggedIn() {
-    return JSON.parse(localStorage.getItem('loggedIn') || this.loggedinStatus.toString())
-  }
+  // get isLoggedIn() {
+  //   return JSON.parse(localStorage.getItem('loggedIn') || this.loggedinStatus.toString())
+  // }
 
   getUserDetails(username, password, displayname, firstname, lastname):any {
     //post these details to server and return user info
-    return this.http.post('http://localhost:3000/user/register', {
+    return this.http.post('http://localhost:3001/user/register', {
       username,
       password,
       displayname,
@@ -31,9 +31,10 @@ export class AuthService {
     })
   }
   getUserSignIn(username, password):any {
-    return this.http.post('http://localhost:3000/user/login', {
+    return this.http.post('http://localhost:3001/user/login', {
       username,
       password
     })
   }
+  
 }

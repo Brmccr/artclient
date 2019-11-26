@@ -42,6 +42,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -86,7 +88,7 @@ const appRoutes: Routes = [
     PaintingComponent,
     DrawingComponent,
     CommentsComponent,
-    SignupInComponent,
+    SignupInComponent, 
     AdminComponent,
     HomeComponent
     // BrowserModule,
@@ -132,7 +134,8 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
