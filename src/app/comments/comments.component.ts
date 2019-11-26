@@ -51,12 +51,15 @@ export class CommentsComponent implements OnInit {
   // deleteArtComments(): void{
   //   this._commentsService.deleteArtComments(this.comment.id)
   // }
-  submitComment(event) {
-    const target = event.target
-    const paragraph = target.querySelector('#paragraph').value
-    this._commentsService.postComment(paragraph)
-    console.log(paragraph)
-  }
+
+
+  // submitComment(event) {
+  //   const target = event.target
+  //   const art_id = this.id;
+  //   const paragraph = target.querySelector('#paragraph').value
+  //   this._commentsService.postComment(paragraph, art_id)
+  //   console.log(paragraph, art_id)
+  // }
 
   // signinUser(event) {
   //   const target = event.target

@@ -17,7 +17,7 @@
           <p>{{response?.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button [routerLink]="['/detail']" mat-button>More Details</button>
+          <button [routerLink]="['/detail',response.id]" mat-button>More Details</button>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>

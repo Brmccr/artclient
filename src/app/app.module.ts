@@ -66,7 +66,7 @@ import { ProfileComponent } from './profile/profile.component';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'display', component: ArtdisplayComponent},
-  {path: 'detail', component: ArtDetailComponent},
+  {path: 'detail/:id', component: ArtDetailComponent},
   {path: 'photography', component: PhotographyComponent},
   {path: 'digital', component: DigitalComponent},
   {path: 'painting', component: PaintingComponent},

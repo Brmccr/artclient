@@ -26,7 +26,21 @@ export class CommentsService {
     return this.http.get('http://localhost:3000/comment/comments', {headers})
     }
 
-  postComment(paragraph) {
+  // postComment(paragraph) {
+  //   const token = localStorage.getItem('token');
+  //   let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
+  //   headers.append('Content-Type', 'application/json');
+  //   headers.append('Authorization', token);
+  //   console.log(token)
+  //   console.log(headers)
+  //   return this.http.post('http://localhost:3000/comment/commentpost', {
+  //     paragraph,
+  //   }, { headers }).subscribe(data => {
+  //     console.log(data, "is what we got from the server")
+  //   })
+  // }
+
+  postComment(paragraph, art_id) {
     const token = localStorage.getItem('token');
     let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
     headers.append('Content-Type', 'application/json');
@@ -34,7 +48,7 @@ export class CommentsService {
     console.log(token)
     console.log(headers)
     return this.http.post('http://localhost:3000/comment/commentpost', {
-      paragraph,
+      paragraph, art_id,
     }, { headers }).subscribe(data => {
       console.log(data, "is what we got from the server")
     })
