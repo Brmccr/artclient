@@ -46,6 +46,10 @@ export class ProfileComponent implements OnInit {
       console.log(paragraph)
     })
   }
+
+  
+  panelOpenState = true;
+  
   // updateComments(id, paragraph){
   //   const target = event.target
   //   const paragraph = target.querySelector('#paragraph').value
