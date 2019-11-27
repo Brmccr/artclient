@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ArtService} from '../art.service';
+import { ArtService } from '../art.service';
 
 
 @Component({
@@ -14,7 +14,9 @@ export class PhotographyComponent implements OnInit {
   constructor(private _artService: ArtService) {}
 
   ngOnInit() {
+    this.getArtPhotography();
   }
+  
   getArtPhotography(): void {
     this._artService.getArtPhotography().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
   }

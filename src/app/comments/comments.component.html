@@ -1,6 +1,11 @@
 <p>comments works!</p>
 
-<button class= "selectbutton" mat-raised-button (click)="getArtComments()">Get Comments</button>
+<!-- <button class= "selectbutton" mat-raised-button (click)="getArtComments()">Get Comments</button> -->
+
+<form (submit)="submitComment($event)">
+        <input type="text" placeholder="Paragraph" id="paragraph">
+        <input type="submit" value="submit">
+        </form>
 
 
 <div *ngFor="let responsecomments of responsecomments">

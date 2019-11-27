@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +41,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -56,15 +57,31 @@ import { AdminComponent } from '../app/admin/admin.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 import { CommentsComponent } from './comments/comments.component';
+import { SignupInComponent } from './signup-in/signup-in.component';
+import { HomeComponent } from './home/home.component';
+import { UpdateArtComponent } from './update-art/update-art.component';
+
+
+
+//import { AuthGuard } from './guards/auth.guard';
+
+
 
 const appRoutes: Routes = [
+  
+  {path: '', component: HomeComponent},
   {path: 'display', component: ArtdisplayComponent},
   {path: 'detail', component: ArtDetailComponent},
   {path: 'photography', component: PhotographyComponent},
   {path: 'digital', component: DigitalComponent},
   {path: 'painting', component: PaintingComponent},
-  {path: 'drawing', component: DrawingComponent}
+  {path: 'drawing', component: DrawingComponent},
+  {path: 'signup-in', component: SignupInComponent},
+  {path: 'admin', component: AdminComponent,},
+  {path: 'update-art', component: UpdateArtComponent}
+  
 ];
 
 @NgModule({
@@ -79,7 +96,14 @@ const appRoutes: Routes = [
     PaintingComponent,
     DrawingComponent,
     CommentsComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent,
+    SignupInComponent,
+    UpdateArtComponent,
+    
+  
+    
+    
     // BrowserModule,
   ],
   imports: [
@@ -123,9 +147,13 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    ReactiveFormsModule
+   
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
 })
 export class AppModule { }
