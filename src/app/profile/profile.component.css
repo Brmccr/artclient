@@ -2,6 +2,34 @@ h6{
     color:white;
 }
 
+h1{
+    color:white;
+}
 .form{
     display: flex;
+}
+
+.inputs{
+    font-size: 20px;
+    color: white !important;
+}
+
+matInput{
+    font-size: 30px;
+    color:white;
+}
+
+.matInput{
+    font-size: 30px;
+    color:white;
+}
+
+.placeholder {
+    color:white !important;
+    font-size:  50px;
+}
+
+.btn{
+    font-size: 20px;
+    color:white !important;
 }

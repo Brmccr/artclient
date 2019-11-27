@@ -29,7 +29,8 @@ export class ArtDetailComponent implements OnInit {
     const art_id = this.id;
     const paragraph = target.querySelector('#paragraph').value
     this._commentsService.postComment(paragraph, art_id)
-    console.log(paragraph)
+    console.log(paragraph);
+    this.ngOnInit();
   }
 
 }
