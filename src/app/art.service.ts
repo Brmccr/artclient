@@ -22,4 +22,8 @@ export class ArtService {
   getArtPainting(): Observable<any> {
     return this.http.get('http://localhost:3001/art/artgenrepaintings')
   }
+  getArtOne(id): Observable<any> {
+    console.log(id);
+    return this.http.get(`http://localhost:3001/art/${id}`)
+  }
 }

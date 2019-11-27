@@ -1,3 +1,42 @@
-<p>art-detail works!</p>
-<img class="detailimg" src="https://i.imgur.com/26SoP9h.jpg">
-<app-comments></app-comments>
+<div class="row">
+  <div class="column">
+<h1 class="detailTitle">{{responseart[0]?.title}}</h1>
+<img class="cardimg" mat-card-image src="{{responseart[0]?.img}}" alt=""/>
+<p>Artist: {{responseart[0].artist}}</p>
+<p>Price: ${{responseart[0].price}}</p>
+<p>Genre: {{responseart[0].genre}}</p>
+<p>Description: {{responseart[0].description}}</p>
+</div>
+<br/>
+<div class="column">
+<h1 class="commentTitle">Comments: {{responseart[0].comments[0].paragraph}}</h1>
+<form (submit)="submitComment($event)">
+    <input class="inputField" type="text" placeholder="Paragraph" id="paragraph">
+    <input class="commentButton" type="submit" value="submit">
+    </form>
+{{responseart[0].comments[1].paragraph}}
+{{responseart[0].comments[2].paragraph}}
+</div>
+</div>
+
+<!-- <div class="imgcards">
+    <div *ngFor="let response of responseart">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{title}}</mat-card-title>
+              <mat-card-subtitle>{{artist}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="cardimg" mat-card-image src="{{response?.img}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>{{response?.price}}</p>
+              <p>Genre: Digital Art</p>
+              <p>{{response?.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button [routerLink]="['/detail']" mat-button>More Details</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+          </div>
+        </div> -->

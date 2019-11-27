@@ -1,7 +1,30 @@
+@keyframes kenburns {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+        transform: scale3d(1.5, 1.5, 1.5) translate3d(20px, 0px, 0px);
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(2, 2, 2) translate3d(120px, 0px, 0px);
+        opacity: 0;
+    }
+}
+
+
 mdb-carousel{
     background-color: black;
 }
 .carousel{
     border-top: 5px solid white;
     border-bottom: 5px solid white;
+}
+mdb-carousel-item{
+    animation: kenburns 15s ease-in-out;
+    overflow: hidden;
 }

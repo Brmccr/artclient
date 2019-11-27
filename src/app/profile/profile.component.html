@@ -1,0 +1,16 @@
+<p>profile works!</p>
+
+<div *ngFor="let responseusercomments of responseusercomments">
+        <div>
+        <h6>{{responseusercomments?.paragraph}}</h6>
+        <button (click)="deleteArtComments()">Delete</button>
+</div>
+        <h6>{{responseusercomments.paragraph}}</h6>
+        <h6>{{responseusercomments[1].paragraph}}</h6>
+        <h6>{{responseusercomments.paragraph}}</h6>
+        <h6>{{responseusercomments?.comments[4]?.paragraph}}</h6>
+        <h6>{{responsecomments?.comments[5]?.paragraph}}</h6>
+        <h6>{{responsecomments?.comments[6]?.paragraph}}</h6>
+        <h6>{{responsecomments?.comments[7]?.paragraph}}</h6>
+        <h6>{{responsecomments?.title}}</h6>
+</div>
