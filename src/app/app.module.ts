@@ -1,10 +1,11 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ReactiveFormsModule }    from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // For MDB Angular Free
 
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
@@ -41,6 +42,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -53,7 +56,6 @@ import { DigitalComponent } from './digital/digital.component';
 import { PaintingComponent } from './painting/painting.component';
 import { DrawingComponent } from './drawing/drawing.component';
 
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments/comments.component';
 import { SignupInComponent } from './signup-in/signup-in.component';
@@ -88,7 +90,7 @@ const appRoutes: Routes = [
     PaintingComponent,
     DrawingComponent,
     CommentsComponent,
-    SignupInComponent,
+    SignupInComponent, 
     AdminComponent,
     HomeComponent,
     ProfileComponent
@@ -135,9 +137,11 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

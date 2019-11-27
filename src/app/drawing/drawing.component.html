@@ -1,7 +1,9 @@
-<p>drawing works!</p>
-<div class="imgcards">
-    <div *ngFor="let responsephotography of responsephotography">
+<h1 class="drawingsTitle">Drawings</h1>
+<br/>
+<div fxLayout="row wrap" fxLayout.xs="column wrap" class="imgcards">
+    <div fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution" *ngFor="let responsephotography of responsephotography">
         <mat-card class="example-card">
+          <div class="cardInfo">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>{{responsephotography?.title}}</mat-card-title>
@@ -9,14 +11,19 @@
             </mat-card-header>
             <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
             <mat-card-content>
-              <p>{{responsephotography?.price}}</p>
-              <p>Genre: Digital Art</p>
-              <p>{{responsephotography?.description}}</p>
+              <br/>
+              <p>Price: ${{responsephotography?.price}}</p>
+              <br/>
+              <p>Genre: Drawings</p>
+              <br/>
+              <p>Description: {{responsephotography?.description}}</p>
             </mat-card-content>
             <mat-card-actions>
-              <button [routerLink]="['/detail',responsephotography.id]" mat-button>More Details</button>
-              <button mat-button>SHARE</button>
+              <br/>
+              <button class="button" [routerLink]="['/detail',responsephotography.id]" mat-button>More Details</button>
+              <button class="button" mat-button>SHARE</button>
             </mat-card-actions>
+          </div>
           </mat-card>
           </div>
         </div>

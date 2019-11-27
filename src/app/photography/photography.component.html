@@ -1,10 +1,12 @@
-<p>photography works!</p>
+
 
 <!-- <button class= "selectbutton" mat-raised-button (click)="getArtPhotography()">Get Photography</button> -->
-
-<div class="imgcards">
-<div *ngFor="let response of responsephotography">
+<h1 class="photographyTitle">Photography</h1>
+<br/>
+<div fxLayout="row wrap" fxLayout.xs="column wrap" class="imgcards">
+<div fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution" *ngFor="let response of responsephotography">
     <mat-card class="example-card">
+      <div class="cardInfo">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{response?.title}}</mat-card-title>
@@ -20,6 +22,7 @@
           <button [routerLink]="['/detail',response.id]" mat-button>More Details</button>
           <button mat-button>SHARE</button>
         </mat-card-actions>
+      </div>
       </mat-card>
       </div>
     </div>

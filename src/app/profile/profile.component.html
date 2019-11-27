@@ -1,16 +1,20 @@
-<p>profile works!</p>
+<h6>profile works!</h6>
 
 <div *ngFor="let responseusercomments of responseusercomments">
         <div>
         <h6>{{responseusercomments?.paragraph}}</h6>
-        <button (click)="deleteArtComments()">Delete</button>
+        <a (click)="deleteComments(responseusercomments.id)" class="btn btn-danger btn-sm">Delete</a>
+        <form (submit)="updateComment($event, responseusercomments.id)">
+                <input type="text" placeholder="Paragraph" id="paragraph">
+                <input type="submit" value="submit">
+                </form>
 </div>
-        <h6>{{responseusercomments.paragraph}}</h6>
+        <!-- <h6>{{responseusercomments.paragraph}}</h6>
         <h6>{{responseusercomments[1].paragraph}}</h6>
         <h6>{{responseusercomments.paragraph}}</h6>
         <h6>{{responseusercomments?.comments[4]?.paragraph}}</h6>
         <h6>{{responsecomments?.comments[5]?.paragraph}}</h6>
         <h6>{{responsecomments?.comments[6]?.paragraph}}</h6>
         <h6>{{responsecomments?.comments[7]?.paragraph}}</h6>
-        <h6>{{responsecomments?.title}}</h6>
+        <h6>{{responsecomments?.title}}</h6> -->
 </div>
