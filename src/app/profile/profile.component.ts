@@ -26,8 +26,37 @@ export class ProfileComponent implements OnInit {
     this._commentsService.getUserComments().subscribe(res => {this.responseusercomments = res; console.log(this.responseusercomments)});
   }
 
-  deleteArtComments(): void{
-    this._commentsService.deleteArtComments(this.responsecomments.id);
+  // deleteArtComments(): void{
+  //   this._commentsService.deleteArtComments(this.responsecomments.id);
+  // }
+
+  deleteComments(id){
+    this._commentsService.deleteArtComments(id).subscribe(res => {
+      this.responsecomments.splice(id, 1);
+    })
+  }
+
+
+  updateComment(event, id) {
+    event.preventDefault();
+    const target = event.target
+    const paragraph = target.querySelector('#paragraph').value
+    this._commentsService.updateArtComments(paragraph, id).subscribe(res => {
+      console.log(res)
+      console.log(paragraph)
+    })
+  }
+
+  
+  panelOpenState = true;
+  
+  // updateComments(id, paragraph){
+  //   const target = event.target
+  //   const paragraph = target.querySelector('#paragraph').value
+  //   this._commentsService.updateArtComments(id, paragraph)
+  //   console.log(paragraph)
+  //   }
+
   }
   // deleteArtComments(): void{
   //   this._commentsService.deleteArtComments(this.comment.id)
@@ -38,4 +67,3 @@ export class ProfileComponent implements OnInit {
   //   this._commentsService.postComment(paragraph)
   //   console.log(paragraph)
   // }
-}

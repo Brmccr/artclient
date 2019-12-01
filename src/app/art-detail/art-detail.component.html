@@ -11,14 +11,14 @@
 <div class="column">
 <h1 class="commentTitle">Comments: {{responseart[0].comments[0].paragraph}}</h1>
 <form (submit)="submitComment($event)">
-    <input class="inputField" type="text" placeholder="Paragraph" id="paragraph">
-    <input class="commentButton" type="submit" value="submit">
+    <input type="text" placeholder="Type Your Comment Here" id="paragraph">
+    <input type="submit" value="submit">
     </form>
-{{responseart[0].comments[1].paragraph}}
-{{responseart[0].comments[2].paragraph}}
+<h1>Comments: {{responseart[0].comments[0]?.paragraph}}</h1>
+{{responseart[0].comments[1]?.paragraph}}
+{{responseart[0].comments[2]?.paragraph}}
 </div>
 </div>
-
 <!-- <div class="imgcards">
     <div *ngFor="let response of responseart">
         <mat-card class="example-card">

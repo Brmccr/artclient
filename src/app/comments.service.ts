@@ -13,7 +13,7 @@ export class CommentsService {
   responsecomments: any;
   
   getArtComments(): Observable<any> {
-    return this.http.get('http://localhost:3000/comment/commentsonart')
+    return this.http.get('http://localhost:3001/comment/commentsonart')
   }
 
   getUserComments(): Observable<any> {
@@ -23,7 +23,7 @@ export class CommentsService {
     headers.append('Authorization', token);
     console.log(token)
     console.log(headers)
-    return this.http.get('http://localhost:3000/comment/comments', {headers})
+    return this.http.get('http://localhost:3001/comment/comments', {headers})
     }
 
   // postComment(paragraph) {
@@ -47,7 +47,7 @@ export class CommentsService {
     headers.append('Authorization', token);
     console.log(token)
     console.log(headers)
-    return this.http.post('http://localhost:3000/comment/commentpost', {
+    return this.http.post('http://localhost:3001/comment/commentpost', {
       paragraph, art_id,
     }, { headers }).subscribe(data => {
       console.log(data, "is what we got from the server")
@@ -56,7 +56,7 @@ export class CommentsService {
 
   postCommentTest():any {
     event.preventDefault();
-    return this.http.post('http://localhost:3000/comment/commentpost', {
+    return this.http.post('http://localhost:3001/comment/commentpost', {
       paragraph: "test"
     })
   }
@@ -66,20 +66,23 @@ export class CommentsService {
     let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', token);
+    console.log(id)
     console.log(token)
     console.log(headers)
-    return this.http.delete<void>(`http://localhost:3000/comment/${id}`, 
+    return this.http.delete<void>(`http://localhost:3001/comment/${id}`, 
     {headers : headers})
   }
 
-  updateArtComments(id, paragraph): Observable<any> {
+  updateArtComments(paragraph, id): Observable<any> {
+    event.preventDefault();
     const token = localStorage.getItem('token');
     let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', token);
+    console.log(id)
     console.log(token)
     console.log(headers)
-    return this.http.put(`http://localhost:3000/comment/${id}`, {
+    return this.http.put(`http://localhost:3001/comment/${id}`, {
       paragraph,
     }, 
     {headers : headers})

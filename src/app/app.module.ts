@@ -46,6 +46,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ArtdisplayComponent } from './artdisplay/artdisplay.component';
 import { ArtcarouselComponent } from './artcarousel/artcarousel.component';
@@ -62,6 +63,7 @@ import { SignupInComponent } from './signup-in/signup-in.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UpdateModalComponent } from './update-modal/update-modal.component';
 
 
 
@@ -93,7 +95,8 @@ const appRoutes: Routes = [
     SignupInComponent, 
     AdminComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdateModalComponent
     // BrowserModule,
   ],
   imports: [
@@ -138,7 +141,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule, 
-    FlexLayoutModule
+    FlexLayoutModule,
+    // NgbModal
   ],
   providers: [],
   bootstrap: [AppComponent]
