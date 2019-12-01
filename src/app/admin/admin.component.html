@@ -18,15 +18,16 @@
   <td>{{ dataSource?.img }}</td>
   <td>{{ dataSource?.genre }}</td>
   <td>{{ dataSource?.description }} </td>
-  <td><button><a routerLink="['/update-art']">Update</a></button></td>
+  <td><button [routerLink]="['/update-art/', dataSource.id]">Update</button></td>
   <td><a (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</a></td>
   </tr>
   </tbody>
 </table>
-  
 </div>
+<router-outlet></router-outlet>
 
 <div class="form-group">
+  <h2>Add Art</h2>
   <form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
     <input id="title" formControlName="title" type="text" class="form-control" placeholder="Title">
     <input id="artist" formControlName="artist" type="text" class="form-control" placeholder="Arist">

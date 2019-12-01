@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 
@@ -62,6 +63,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { SignupInComponent } from './signup-in/signup-in.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateArtComponent } from './update-art/update-art.component';
+import { AdminGuardService } from './admin-guard.service';
 
 
 
@@ -79,8 +81,11 @@ const appRoutes: Routes = [
   {path: 'painting', component: PaintingComponent},
   {path: 'drawing', component: DrawingComponent},
   {path: 'signup-in', component: SignupInComponent},
-  {path: 'admin', component: AdminComponent,},
-  {path: 'update-art', component: UpdateArtComponent}
+  {path: 'admin', component: AdminComponent,canActivate: [AdminGuardService],
+          children: [
+            {path: 'update-art/:id', component: UpdateArtComponent}
+          ]},
+  
   
 ];
 
@@ -149,9 +154,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule, 
     ReactiveFormsModule
-   
+    
+  
   ],
-  providers: [],
+  providers: [AdminGuardService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   

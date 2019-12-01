@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AdminComponent implements OnInit {
   dataSource = []
   responsephotography ;
+  id;
   createForm: FormGroup;
   tableColumns : string[] = ['title', 'artist', 'price', 'img', 'genre', 'description']
   constructor(private _artService: ArtService, 
@@ -60,8 +61,8 @@ export class AdminComponent implements OnInit {
      this.dataSource.splice(id, 1);
    })
  }
- editArt() {
-  this._router.navigate(['/update-art'])
+ getArtOne(): void {
+  this._artService.GetArtOne(this.id).subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
 }
   
 }

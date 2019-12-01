@@ -30,6 +30,11 @@ export class ArtService {
     return this.http.get('http://localhost:3000/art/artgetall')
   }
 
+  GetArtOne(id): Observable<any> {
+    console.log(id);
+    return this.http.get(`http://localhost:3000/art/${id}`)
+  }
+
   createArt(title, artist, price, img, genre, description): any {
     const token = localStorage.getItem('token');
     let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);

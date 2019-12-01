@@ -1,6 +1,7 @@
-<div class="form-group">
-        <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-          <input id="title" formControlName="title" type="text" class="form-control" placeholder="Title">
+<div class="form-group" [formGroup]="updateForm">
+  <h2>Update Art</h2>
+        <form (ngSubmit)="onSubmit()">
+          <input id="title" formControlName="title" type="text" class="form-control" placeholder="{{ responsephotography.title }}">
           <input id="artist" formControlName="artist" type="text" class="form-control" placeholder="Arist">
           <input id="price" formControlName="price" type="text" class="form-control" placeholder='Price'>
           <input id="image" formControlName="img" type="text" class="form-control" placeholder="Image Url">
