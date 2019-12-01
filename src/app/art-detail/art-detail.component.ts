@@ -21,7 +21,7 @@ export class ArtDetailComponent implements OnInit {
   }
 
   getArtOne(): void {
-    this._artService.GetArtOne(this.id).subscribe(res => {this.responseart = res; console.log(this.responseart)});
+    this._artService.getArtOne(this.id).subscribe(res => {this.responseart = res; console.log(this.responseart)});
   }
 
   submitComment(event) {

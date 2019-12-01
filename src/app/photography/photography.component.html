@@ -4,23 +4,27 @@
 <h1 class="photographyTitle">Photography</h1>
 <br/>
 <div fxLayout="row wrap" fxLayout.xs="column wrap" class="imgcards">
-<div fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution" *ngFor="let response of responsephotography">
+<div fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution" *ngFor="let responsephotography of responsephotography">
     <mat-card class="example-card">
       <div class="cardInfo">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{response?.title}}</mat-card-title>
-          <mat-card-subtitle>{{response?.artist}}</mat-card-subtitle>
+          <mat-card-title>{{responsephotography?.title}}</mat-card-title>
+          <mat-card-subtitle>{{responsephotography?.artist}}</mat-card-subtitle>
         </mat-card-header>
-        <img class="cardimg" mat-card-image src="{{response?.img}}" alt="Photo of a Shiba Inu">
+        <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <p>{{response?.price}}</p>
+          <br/>
+          <p>Price: ${{responsephotography?.price}}</p>
+          <br/>
           <p>Genre: Digital Art</p>
-          <p>{{response?.description}}</p>
+          <br/>
+          <p>Description: {{responsephotography?.description}}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button [routerLink]="['/detail',response.id]" mat-button>More Details</button>
-          <button mat-button>SHARE</button>
+          <br/>
+          <button class="button" [routerLink]="['/detail',responsephotography.id]" mat-button>More Details</button>
+          <button class="button" mat-button>SHARE</button>
         </mat-card-actions>
       </div>
       </mat-card>

@@ -1,4 +1,64 @@
-.detailimg{
+.cardimg{
+    width: auto;
+    height: 20vw;
+    margin-left: 30px;
+    margin-right: auto;
+    /* margin-left: 165px; */ 
+    object-fit: cover;
+    border: 4px groove white;
+    text-align: center;
+    justify-content: center;
+}
+.detailTitle{
+    font-family: 'Cinzel', serif;
+    font-weight: 450;
+    font-size: 48px;
+    letter-spacing: 0.1em;
+    color: white;
+    margin-left: 30px;
+    margin-right: auto;
+    justify-self: center;
+    text-decoration: underline;
+}
+.commentTitle{
+    font-family: 'Cinzel', serif;
+    font-weight: 450;
+    font-size: 40px;
+    text-align: left;
+    color: white;
+    margin: 25px;
+    text-decoration: underline;
+}
+.column{
+    float: left;
     width: 50%;
-    height: auto;
+    /* column-count: 2; */
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+    /* column-count: 2; */
+}
+.inputField{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 5em;
+    padding: 5px;
+    display: block;
+    text-align: left;
+    /* padding: 4px; */
+    margin: 25px;
+}
+p{
+    font-family: 'Cinzel', serif;
+    font-weight: 350;
+    font-size: 18px;
+    text-align: left;
+    color: white;
+    margin-left: 25px;
 }
