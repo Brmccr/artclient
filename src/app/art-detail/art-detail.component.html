@@ -2,14 +2,14 @@
   <div class="column">
 <h1 class="detailTitle">{{responseart[0]?.title}}</h1>
 <img class="cardimg" mat-card-image src="{{responseart[0]?.img}}" alt=""/>
-<p>Artist: {{responseart[0].artist}}</p>
-<p>Price: ${{responseart[0].price}}</p>
-<p>Genre: {{responseart[0].genre}}</p>
-<p>Description: {{responseart[0].description}}</p>
+<p>Artist: {{responseart[0]?.artist}}</p>
+<p>Price: ${{responseart[0]?.price}}</p>
+<p>Genre: {{responseart[0]?.genre}}</p>
+<p>Description: {{responseart[0]?.description}}</p>
 </div>
 <br/>
 <div class="column">
-<h1 class="commentTitle">Comments: {{responseart[0].comments[0].paragraph}}</h1>
+<h1 class="commentTitle">Comments: {{responseart[0].comments[0]?.paragraph}}</h1>
 <form (submit)="submitComment($event)">
     <input type="text" placeholder="Type Your Comment Here" id="paragraph">
     <input type="submit" value="submit">

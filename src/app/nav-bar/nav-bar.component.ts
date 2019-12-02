@@ -25,6 +25,8 @@ export class NavBarComponent implements OnInit {
   logOut() {
     localStorage.clear();
   }
+
+  
 }
 
 // const clearToken = () => {
