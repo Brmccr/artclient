@@ -21,4 +21,13 @@ export class NavBarComponent implements OnInit {
   getArtPhotography(): void {
     this._artService.getArtPhotography().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});
   }
+
+  logOut() {
+    localStorage.clear();
+  }
 }
+
+// const clearToken = () => {
+//   localStorage.clear();
+//   setSessionToken('')
+// }

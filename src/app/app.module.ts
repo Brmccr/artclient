@@ -43,6 +43,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -142,6 +143,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule, 
     FlexLayoutModule,
+    NgxPaginationModule
     // NgbModal
   ],
   providers: [],

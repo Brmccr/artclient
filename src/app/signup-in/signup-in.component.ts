@@ -28,6 +28,7 @@ export class SignupInComponent implements OnInit {
     console.log(username, password, displayname, firstname, lastname)
   }
   signinUser(event) {
+    event.preventDefault()
     const target = event.target
     const username = target.querySelector('#username').value
     const password = target.querySelector('#password').value

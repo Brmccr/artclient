@@ -1,7 +1,53 @@
 h6{
     color:white;
+    font-size: 18px;
 }
 
+h1{
+    font-size: 40px;
+    font-weight: 550;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.2em;
+    animation: slideInRight;
+    margin: 15px;
+    color: white;
+}
 .form{
     display: flex;
+}
+
+.inputs{
+    font-size: 20px;
+    color: white !important;
+}
+
+matInput{
+    font-size: 30px;
+    color:white;
+}
+
+.matInput{
+    font-size: 30px;
+    color:white;
+}
+
+.placeholder {
+    color:white !important;
+    font-size:  50px;
+}
+
+.btn{
+    font-size: 20px;
+    color:white !important;
+    margin: 5px;
+    font-weight: 450;
+}
+mat-panel-title{
+    font-family: 'Cinzel', serif;
+}
+mat-panel-description{
+    font-family: 'Cinzel', serif;
+}
+mat-expansion-panel{
+    background-image: linear-gradient(to left, black, grey);
 }

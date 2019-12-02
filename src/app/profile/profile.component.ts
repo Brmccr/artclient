@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
   deleteComments(id){
     this._commentsService.deleteArtComments(id).subscribe(res => {
       this.responsecomments.splice(id, 1);
+      this.ngOnInit();
     })
   }
 
@@ -44,6 +45,7 @@ export class ProfileComponent implements OnInit {
     this._commentsService.updateArtComments(paragraph, id).subscribe(res => {
       console.log(res)
       console.log(paragraph)
+      this.ngOnInit();
     })
   }
 

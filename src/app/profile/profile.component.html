@@ -2,7 +2,7 @@
 
 <!-- <app-update-modal></app-update-modal> -->
 
-
+<h1>Your Profile</h1>
 <!-- <div *ngFor="let responseusercomments of responseusercomments">
         <div>
         <h6>{{responseusercomments?.paragraph}}</h6>
@@ -26,14 +26,14 @@
       
           <div *ngFor="let responseusercomments of responseusercomments">
                 <div>
-                <h6>{{responseusercomments?.paragraph}}</h6>
+                <h6>Comment : {{responseusercomments?.paragraph}}</h6>
                 <form (submit)="updateComment($event, responseusercomments.id)">
                                 
                                 <mat-form-field>
-                                                <input type="text" matInput placeholder="Update Comment" id="paragraph">
+                                                <input class="inputs" type="text" matInput placeholder="Update Comment" id="paragraph">
                                               </mat-form-field>
-                                              <input type="submit" value="Update">
-                                              <a (click)="deleteComments(responseusercomments.id)" class="btn btn-danger btn-sm">Delete</a>
+                                              <input class="btn btn-secondary btn-sm" type="submit" value="Update">
+                                              <a (click)="deleteComments(responseusercomments.id)" class="btn btn-secondary btn-sm">Delete</a>
                         <!-- <input type="text" placeholder="Paragraph" id="paragraph">
                         <input type="submit" value="submit"> -->
                         </form>

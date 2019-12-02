@@ -26,7 +26,7 @@
     font-size: 40px;
     text-align: left;
     color: white;
-    margin: 25px;
+    /* margin: 25px; */
     text-decoration: underline;
 }
 .column{
@@ -61,4 +61,24 @@ p{
     text-align: left;
     color: white;
     margin-left: 25px;
+}
+.commentButton{
+    width: inherit;
+    height: inherit;
+    margin: 5px;
+    padding: 10px;
+}
+#paragraph{
+    width: 75%;
+    margin: 5px;
+}
+p{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.comment{
+    width: 40%;
+      height: 100px;
+      padding: 10px;
+      background-color: #d0e2bc;
 }
