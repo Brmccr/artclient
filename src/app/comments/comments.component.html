@@ -2,12 +2,12 @@
 
 <!-- <button class= "selectbutton" mat-raised-button (click)="getArtComments()">Get Comments</button> -->
 
-<h2>Submit A New Comment</h2>
+<!-- <h2>Submit A New Comment</h2>
 
 <form (submit)="submitComment($event)">
         <input type="text" placeholder="Paragraph"id="paragraph">
         <input type="submit" value="submit">
-        </form>
+        </form><h2> -->
 
         <!-- <form (submit)="postComment()">
                 <input type="text" placeholder="Paragraph" id="paragraph">
@@ -31,10 +31,7 @@
         <div>
         <h6>{{responsecomments?.comments[0].paragraph}}</h6>
         <a (click)="deleteComments(responsecomments.comments[0].id)" class="btn btn-danger btn-sm">Delete</a>
-        <form (submit)="updateComment(responsecomments.comments[0].id, $event)">
-                        <input type="text" placeholder="Paragraph" id="paragraph">
-                        <input type="submit" value="submit">
-                        </form>
+        
         </div>
 </div>
 <!-- </div>
