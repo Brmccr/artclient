@@ -1,0 +1,36 @@
+.example-card{
+    width: 28%;
+    height: auto;
+    padding: 29px;
+    margin: 25px;
+}
+
+.imgcards{
+    display: flex;
+    
+}
+
+.example-card:hover{
+        transform: scale(1.05);
+        transition-duration: 2000ms;
+      }
+
+.cardimg{
+    height: '15em';
+    width: 'auto'
+}
+
+.src{
+    height: '15em';
+    width: 'auto'
+}
+
+.mat-card-image{
+    height: '15em' !important;
+    width: 'auto' !important;
+}
+
+img{
+    height: '15em';
+    width: 'auto'
+}
