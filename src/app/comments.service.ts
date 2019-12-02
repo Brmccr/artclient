@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs"
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { APIURL } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CommentsService {
   responsecomments: any;
   
   getArtComments(): Observable<any> {
-    return this.http.get('http://localhost:3000/comment/commentsonart')
+    return this.http.get(`${APIURL}/comment/commentsonart`)
   }
 
   getUserComments(): Observable<any> {
@@ -23,7 +24,7 @@ export class CommentsService {
     headers.append('Authorization', token);
     console.log(token)
     console.log(headers)
-    return this.http.get('http://localhost:3000/comment/comments', {headers})
+    return this.http.get(`${APIURL}/comment/comments`, {headers})
     }
 
   // postComment(paragraph) {
@@ -47,7 +48,7 @@ export class CommentsService {
     headers.append('Authorization', token);
     console.log(token)
     console.log(headers)
-    return this.http.post('http://localhost:3000/comment/commentpost', {
+    return this.http.post(`${APIURL}/comment/commentpost`, {
       paragraph, art_id,
     }, { headers }).subscribe(data => {
       console.log(data, "is what we got from the server")
@@ -56,7 +57,7 @@ export class CommentsService {
 
   postCommentTest():any {
     event.preventDefault();
-    return this.http.post('http://localhost:3000/comment/commentpost', {
+    return this.http.post(`${APIURL}/comment/commentpost`, {
       paragraph: "test"
     })
   }
@@ -69,7 +70,7 @@ export class CommentsService {
     console.log(id)
     console.log(token)
     console.log(headers)
-    return this.http.delete<void>(`http://localhost:3000/comment/${id}`, 
+    return this.http.delete<void>(`${APIURL}/comment/${id}`, 
     {headers : headers})
   }
 
@@ -82,7 +83,7 @@ export class CommentsService {
     console.log(id)
     console.log(token)
     console.log(headers)
-    return this.http.put(`http://localhost:3000/comment/${id}`, {
+    return this.http.put(`${APIURL}/comment/${id}`, {
       paragraph,
     }, 
     {headers : headers})

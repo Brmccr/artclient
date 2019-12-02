@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs"
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { APIURL } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +12,23 @@ export class ArtService {
   responsephotography: any;
 
   getArtPhotography(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgenrephotography')
+    return this.http.get(`${APIURL}/art/artgenrephotography`)
   }
   getArtDigital(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgenredigital')
+    return this.http.get(`${APIURL}/art/artgenredigital`)
   }
   getArtDrawing(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgenredrawing')
+    return this.http.get(`${APIURL}/art/artgenredrawing`)
   }
   getArtPainting(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgenrepaintings')
+    return this.http.get(`${APIURL}/art/artgenrepaintings`)
   }
   getArtOne(id): Observable<any> {
     console.log(id);
-    return this.http.get(`http://localhost:3000/art/${id}`)
+    return this.http.get(`${APIURL}/art/${id}`)
   }
   getArtAll(): Observable<any> {
-    return this.http.get('http://localhost:3000/art/artgetall')
+    return this.http.get(`${APIURL}/art/artgetall`)
   }
 
   createArt(title, artist, price, img, genre, description): any {
@@ -37,7 +38,7 @@ export class ArtService {
     headers.append('Authorization', token);
     console.log(token)
     console.log(headers)
-  return this.http.post('http://localhost:3000/art/artcreate', {
+  return this.http.post(`${APIURL}/art/artcreate`, {
     title,
     artist,
     price,
@@ -69,7 +70,7 @@ export class ArtService {
     headers.append('Authorization', token);
     console.log(token)
     console.log(headers)
-    return this.http.delete(`http://localhost:3000/art/${id}`, {headers: headers})
+    return this.http.delete(`${APIURL}/art/${id}`, {headers: headers})
   }
 
 
@@ -82,7 +83,7 @@ updateArt(id, title, artist, price, img, genre, description): Observable<any> {
     console.log(id)
     console.log(token)
     console.log(headers)
-    return this.http.put(`http://localhost:3000/art/${id}`, {
+    return this.http.put(`${APIURL}/art/${id}`, {
         id,
         title,
         artist,

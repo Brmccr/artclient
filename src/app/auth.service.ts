@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { APIURL } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class AuthService {
 
   getUserDetails(username, password, displayname, firstname, lastname):any {
     //post these details to server and return user info
-    return this.http.post('http://localhost:3000/user/register', {
+    return this.http.post(`${APIURL}/user/register`, {
       username,
       password,
       displayname,
@@ -31,7 +31,7 @@ export class AuthService {
     })
   }
   getUserSignIn(username, password):any {
-    return this.http.post('http://localhost:3000/user/login', {
+    return this.http.post(`${APIURL}/user/login`, {
       username,
       password
     })
