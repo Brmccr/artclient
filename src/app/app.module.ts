@@ -7,8 +7,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
 
+
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,13 +37,15 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef, MatDialog} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -56,18 +59,25 @@ import { PhotographyComponent } from './photography/photography.component';
 import { DigitalComponent } from './digital/digital.component';
 import { PaintingComponent } from './painting/painting.component';
 import { DrawingComponent } from './drawing/drawing.component';
+import { AdminComponent } from '../app/admin/admin.component';
 
 import { FormsModule } from '@angular/forms';
+
 import { CommentsComponent } from './comments/comments.component';
 import { SignupInComponent } from './signup-in/signup-in.component';
-import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { UpdateArtComponent } from './update-art/update-art.component';
+import { AdminGuardService } from './admin-guard.service';
+
 import { ProfileComponent } from './profile/profile.component';
 import { UpdateModalComponent } from './update-modal/update-modal.component';
+//import { AuthGuard } from './guards/auth.guard';
+import { RoleGuardService } from './role-guard.service';
 
 
 
 const appRoutes: Routes = [
+  
   {path: '', component: HomeComponent},
   {path: 'display', component: ArtdisplayComponent},
   {path: 'detail/:id', component: ArtDetailComponent},
@@ -76,6 +86,15 @@ const appRoutes: Routes = [
   {path: 'painting', component: PaintingComponent},
   {path: 'drawing', component: DrawingComponent},
   {path: 'signup-in', component: SignupInComponent},
+  {path: 'admin', 
+  component: AdminComponent,
+  canActivate: [RoleGuardService],
+          data: {
+            expectedRole: 'admin',},
+         // children: [
+           // {path: 'update-art/:id', component: UpdateArtComponent}
+         // ]
+        },
   {path: 'admin', component: AdminComponent},
   {path: 'profile', component: ProfileComponent}
 ];
@@ -92,6 +111,14 @@ const appRoutes: Routes = [
     PaintingComponent,
     DrawingComponent,
     CommentsComponent,
+    AdminComponent,
+    HomeComponent,
+    SignupInComponent,
+    UpdateArtComponent,
+    
+  
+    
+    
     SignupInComponent, 
     AdminComponent,
     HomeComponent,
@@ -141,11 +168,19 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule, 
+    ReactiveFormsModule,
+    
+  
+  
     FlexLayoutModule,
     // NgbModal
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ], 
+  entryComponents: [UpdateArtComponent],
+  providers: [AdminGuardService, RoleGuardService],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  
+  
 })
 
 export class AppModule { }

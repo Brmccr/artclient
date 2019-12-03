@@ -1,0 +1,39 @@
+
+
+
+
+  <h2 mat-dialog-title>Update Art</h2>
+  <div mat-dialog-content>
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+              <input matInput formControlName="title" type="text" required />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Artist</mat-label>
+              <input matInput  formControlName="artist" type="text" required />
+            </mat-form-field>
+            <mat-form-field>
+             <mat-label>Price</mat-label> 
+              <input matInput formControlName="price" type="text" required />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Image Url</mat-label>
+              <input matInput formControlName="img" type="text" >
+            </mat-form-field>
+          <mat-form-field>
+            <mat-label>Genre</mat-label>
+              <input matInput formControlName="genre" type="text" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Description</mat-label>
+          <input matInput formControlName="description" type="text" required />  
+          </mat-form-field>
+          </form>
+        </div>
+          <div mat-dialog-actions>
+            <button mat-button [mat-dialog-close]>Cancel</button>
+          <button mat-button [mat-dialog-close]="this.updateForm.value" type="submit" [disabled]="!updateForm.valid">Update</button>
+          </div>
+      
+        
