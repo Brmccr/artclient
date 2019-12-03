@@ -1,5 +1,5 @@
 {
-  "name": "jabartdepclient",
+  "name": "artclient",
   "version": "0.0.0",
   "engines": {
     "node": "10.16.0"
@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/JabArtdepClient"
+    "start": "serve -s dist/artclient"
   },
   "private": true,
   "dependencies": {
