@@ -1,18 +1,19 @@
-<p>signup-in works!</p>
-
-<form (submit)="signupUser($event)">
-<input type="text" placeholder="Username" id="username">
-<input type="password" placeholder="Password" id="password">
-<input type="text" placeholder="DisplayName" id="displayname">
-<input type="text" placeholder="FirstName" id="firstname">
-<input type="text" placeholder="LastName" id="lastname">
-<input type="submit" value="submit">
+<div>
+<form class="signupForm" (submit)="signupUser($event)">
+<h2 class="authTitle">Sign Up</h2>
+<input class="inputField"  type="text" placeholder="First Name" id="firstname">
+<input class="inputField"  type="text" placeholder="Last Name" id="lastname">
+<input class="inputField"  type="text" placeholder="Email" id="username">
+<input class="inputField"  type="text" placeholder="Display Name" id="displayname">
+<input class="inputField"  type="password" placeholder="Password" id="password">
+<input class="button"  type="submit" value="submit">
 </form>
-
-<br>
-<br>
-<form (submit)="signinUser($event)">
-        <input type="text" placeholder="Username" id="username">
-        <input type="password" placeholder="Password" id="password">
-        <input type="submit" value="submit">
-        </form>
+<br/>
+<br/>
+<form class="loginForm" (submit)="signinUser($event)">
+<h2 class="authTitle">Log In</h2>
+<input class="inputField" type="text" placeholder="Username" id="username" >
+<input class="inputField"  type="password" placeholder="Password" id="password">
+<input class="button"  type="submit" value="submit">
+</form>
+</div>

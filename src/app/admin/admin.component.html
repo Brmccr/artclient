@@ -18,15 +18,14 @@
   <td>{{ dataSource?.img }}</td>
   <td>{{ dataSource?.genre }}</td>
   <td>{{ dataSource?.description }} </td>
-  <td><button [routerLink]="['/update-art/', dataSource.id]">Update</button></td>
+  <td><button (click)="openUpdate(dataSource)">Update</button></td>
   <td><a (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</a></td>
   </tr>
   </tbody>
 </table>
 </div>
-<router-outlet></router-outlet>
 
-<div class="form-group">
+<div class="form-group" [formGroup]="createForm">
   <h2>Add Art</h2>
   <form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
     <input id="title" formControlName="title" type="text" class="form-control" placeholder="Title">
@@ -40,7 +39,24 @@
 </div>
   
 
-    
+<!--<div *ngFor="let dataSource of dataSource">
+    <div >
+    <h6>Title : {{dataSource?.title}}</h6>
+    <form (submit)="updateArt($event)">
+                                    <input class="inputField" type="text" placeholder="{{dataSource?.title}}" id="title">
+                                    <input class="inputField"  type="text" placeholder="{{dataSource?.artist}}" id="artist">
+                                    <input class="inputField"  type="text" placeholder="{{dataSource?.price}}" id="price">
+                                    <input class="inputField"  type="text" placeholder="{{dataSource?.img}}" id="img">
+                                    <input class="inputField"  type="text" placeholder="{{dataSource?.genre}}" id="genre">
+                                    <input class="inputField" type="text" placeholder="{{dataSource?.description}}" id="description">
+                                  <input class="btn btn-secondary btn-sm" type="submit" value="Update">
+                                  <a (click)="artDelete(dataSource.id)" class="btn btn-secondary btn-sm">Delete</a>
+            <input type="text" placeholder="Paragraph" id="paragraph">
+            <input type="submit" value="submit"> 
+            </form>
+</div>
+</div>-->
+
  
 
 

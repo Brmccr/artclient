@@ -19,21 +19,17 @@ export class AuthService {
   // get isLoggedIn() {
   //   return JSON.parse(localStorage.getItem('loggedIn') || this.loggedinStatus.toString())
   // }
-
+  
   getUserDetails(username, passwordhash, displayname, firstname, lastname):any {
     //post these details to server and return user info
-    const token = localStorage.getItem('token');
-    let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
-    headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', token);
-    console.log(token)
-    console.log(headers)
     return this.http.post('http://localhost:3000/user/register', {
       username,
       passwordhash,
-      displayname,
+      displayname, 
       firstname,
       lastname
+      
+    
     })
   }
   getUserSignIn(username, password):any {
@@ -42,4 +38,7 @@ export class AuthService {
       password
     })
   }
+ 
+    
+  
 }

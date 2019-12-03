@@ -1,10 +1,11 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ReactiveFormsModule }    from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // For MDB Angular Free
 
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -36,15 +37,19 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef, MatDialog} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ArtdisplayComponent } from './artdisplay/artdisplay.component';
 import { ArtcarouselComponent } from './artcarousel/artcarousel.component';
@@ -56,7 +61,6 @@ import { PaintingComponent } from './painting/painting.component';
 import { DrawingComponent } from './drawing/drawing.component';
 import { AdminComponent } from '../app/admin/admin.component';
 
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { CommentsComponent } from './comments/comments.component';
@@ -65,9 +69,10 @@ import { HomeComponent } from './home/home.component';
 import { UpdateArtComponent } from './update-art/update-art.component';
 import { AdminGuardService } from './admin-guard.service';
 
-
-
+import { ProfileComponent } from './profile/profile.component';
+import { UpdateModalComponent } from './update-modal/update-modal.component';
 //import { AuthGuard } from './guards/auth.guard';
+import { RoleGuardService } from './role-guard.service';
 
 
 
@@ -75,18 +80,23 @@ const appRoutes: Routes = [
   
   {path: '', component: HomeComponent},
   {path: 'display', component: ArtdisplayComponent},
-  {path: 'detail', component: ArtDetailComponent},
+  {path: 'detail/:id', component: ArtDetailComponent},
   {path: 'photography', component: PhotographyComponent},
   {path: 'digital', component: DigitalComponent},
   {path: 'painting', component: PaintingComponent},
   {path: 'drawing', component: DrawingComponent},
   {path: 'signup-in', component: SignupInComponent},
-  {path: 'admin', component: AdminComponent,canActivate: [AdminGuardService],
-          children: [
-            {path: 'update-art/:id', component: UpdateArtComponent}
-          ]},
-  
-  
+  {path: 'admin', 
+  component: AdminComponent,
+  canActivate: [RoleGuardService],
+          data: {
+            expectedRole: 'admin',},
+         // children: [
+           // {path: 'update-art/:id', component: UpdateArtComponent}
+         // ]
+        },
+  {path: 'admin', component: AdminComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -109,6 +119,11 @@ const appRoutes: Routes = [
   
     
     
+    SignupInComponent, 
+    AdminComponent,
+    HomeComponent,
+    ProfileComponent,
+    UpdateModalComponent
     // BrowserModule,
   ],
   imports: [
@@ -153,13 +168,19 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
     
   
-  ],
-  providers: [AdminGuardService],
+  
+    FlexLayoutModule,
+    // NgbModal
+  ], 
+  entryComponents: [UpdateArtComponent],
+  providers: [AdminGuardService, RoleGuardService],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  
   
 })
+
 export class AppModule { }

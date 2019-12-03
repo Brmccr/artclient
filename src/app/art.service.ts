@@ -12,8 +12,9 @@ export class ArtService {
               private route: ActivatedRoute) {}
   baseUrl= 'http://localhost:3000/art'
   responsephotography: any;
+ 
   id;
-
+  art;
   getArtPhotography(): Observable<any> {
     return this.http.get('http://localhost:3000/art/artgenrephotography')
   }
@@ -53,17 +54,30 @@ export class ArtService {
     console.log(data)
   })
   }
- artUpdate(title, artist, price, img, genre, description): Observable<void> {
-    return this.http.put<void>(`${this.baseUrl}/${this.id}`, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'token'
-      })
-      
-  
+ 
 
-      })
-    }
+    artUpdate(id, title, artist, price, img, genre, description): Observable<any> {
+      //event.preventDefault();
+      const token = localStorage.getItem('token');
+      let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
+      headers.append('Content-Type', 'application/json');
+      headers.append('Authorization', token);
+      console.log(id)
+      console.log(token)
+      console.log(headers)
+      return this.http.put(`http://localhost:3000/art/${id}`, { art: {
+          id,
+          title,
+          artist,
+          price,
+          img,
+          genre,
+          description
+        }}, {headers : headers})
+        
+      }
+  
+    
   
   deleteArt(id): Observable<any> {
     const token = localStorage.getItem('token');
@@ -73,5 +87,9 @@ export class ArtService {
     console.log(token)
     console.log(headers)
     return this.http.delete(`http://localhost:3000/art/${id}`, {headers: headers})
+  }
+  getArtOne(id): Observable<any> {
+    console.log(id);
+    return this.http.get(`http://localhost:3000/art/${id}`)
   }
 }

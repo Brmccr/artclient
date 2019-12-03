@@ -1,57 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Optional } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { ArtService } from '../art.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
+
+
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-update-art',
   templateUrl: './update-art.component.html',
-  styleUrls: ['./update-art.component.css'],
-  providers: [ArtService]
+  styleUrls: ['./update-art.component.css']
+  
 })
 export class UpdateArtComponent implements OnInit {
-  responsephotography;
-  id; 
-  updateForm:  FormGroup;
+
  
+  updateForm:  FormGroup;
+  updatedArt
 
 
-  constructor(private _artService: ArtService, 
-              private fb: FormBuilder,
-              private _router: Router,
-              private route: ActivatedRoute
-              ) {this.route.params.subscribe( params => {console.log(params), this.id=params.id})
-            
-                
-              }
+  constructor(
+              private _fb: FormBuilder,
+              public dialogRef: MatDialogRef<UpdateArtComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: any
+              ){}   
   
 
   ngOnInit() {
-    
-    this.updateArt(this._artService.responsephotography.id)
-
-    this.updateForm = new FormGroup({
-      title: new FormControl(),
-      artist: new FormControl(),
-      price: new FormControl(),
-      img: new FormControl(),
-      genre: new FormControl(),
-      description: new FormControl(),
-  })
-
+    console.log(this.data)
+    this.updateForm = this._fb.group({
+      id: this.data.id,
+      title: this.data.title,
+      artist: this.data.artist,
+      price: this.data.price,
+      img: this.data.img,
+      genre: this.data.genre,
+      description: this.data.description
+    })
+   
 
   }
   
-  updateArt(id): void {
-    this._artService.artUpdate(
-      this.updateForm.value.title, 
-      this.updateForm.value.artist, 
-      this.updateForm.value.price, 
-      this.updateForm.value.img, 
-      this.updateForm.value.genre, 
-      this.updateForm.value.description)
 
-  }
   
 
   

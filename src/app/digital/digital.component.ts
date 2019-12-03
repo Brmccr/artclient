@@ -9,7 +9,7 @@ import {ArtService} from '../art.service';
 })
 export class DigitalComponent implements OnInit {
   responsephotography ;
-
+  regularDistribution = 100 / 4 + '%';
   constructor(private _artService: ArtService) {}
 
   ngOnInit() {

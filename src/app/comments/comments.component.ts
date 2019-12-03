@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsService } from '../comments.service';
 
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -14,19 +15,51 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.getArtComments();
+    // this.postCommentTest();
   }
   
   getArtComments(): void {
     this._commentsService.getArtComments().subscribe(res => {this.responsecomments = res; console.log(this.responsecomments)});
   }
 
-  submitComment(event) {
+  deleteComments(id){
+    this._commentsService.deleteArtComments(id).subscribe(res => {
+      this.responsecomments.splice(id, 1);
+    })
+  }
+
+
+  updateComment(id, event) {
     const target = event.target
     const paragraph = target.querySelector('#paragraph').value
-
-    this._commentsService.postComment(paragraph)
+    this._commentsService.updateArtComments(id, paragraph)
     console.log(paragraph)
   }
+
+  // delete(hero: Hero): void {
+  //   this.heroes = this.heroes.filter(h => h !== hero);
+  //   this.heroService.deleteHero(hero).subscribe();
+  // }
+
+  // postCommentTest(): void{
+  //   this._commentsService.postCommentTest().subscribe(res => {this.responsecomments = res; console.log(this.responsecomments)});
+  // }
+
+  // postComment(): void{
+  //   this._commentsService.postComment().subscribe(res => {this.responsecomments = res; console.log(this.responsecomments)});
+  // }
+  // deleteArtComments(): void{
+  //   this._commentsService.deleteArtComments(this.comment.id)
+  // }
+
+
+  // submitComment(event) {
+  //   const target = event.target
+  //   const art_id = this.id;
+  //   const paragraph = target.querySelector('#paragraph').value
+  //   this._commentsService.postComment(paragraph, art_id)
+  //   console.log(paragraph, art_id)
+  // }
 
   // signinUser(event) {
   //   const target = event.target

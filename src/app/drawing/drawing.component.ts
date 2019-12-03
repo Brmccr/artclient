@@ -8,7 +8,7 @@ import {ArtService} from '../art.service';
   providers: [ArtService]
 })
 export class DrawingComponent implements OnInit {
-
+  regularDistribution = 100 / 4 + '%';
   responsephotography ;
   constructor(private _artService: ArtService) {}
 
