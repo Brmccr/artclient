@@ -18,13 +18,15 @@
     </div>
   </div>
   <a [routerLink]="['/signup-in']"class="button fancy-button"><i class="material-icons"></i>SignUp/SignIn</a>
+  <div>
   <a [routerLink]="['/admin']"class="button fancy-button"><i class="material-icons"></i>Admin</a>
+</div>
   <a [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i></a>
   <!-- <div *ngIf="getlocalStorage(key) === 'token'"> -->
   <a [routerLink]="['/profile']" class="button fancy-button"><i class="material-icons"></i>My Profile</a>
-<!-- </div> -->
   <a [routerLink]="['/']" class="button fancy-button" (click)="logOut()"><i class="material-icons"></i>LogOut</a>
   <!-- <button class= "selectbutton" mat-raised-button (click)="getArtDigital()">Get Digital</button> -->
+ 
 
   </nav>
 
