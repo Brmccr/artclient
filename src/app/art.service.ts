@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs"
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Art } from './art.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtService {
-  constructor(private http: HttpClient) {}
-  id;
+  constructor(private http: HttpClient,
+              private route: ActivatedRoute) {}
+  baseUrl= 'http://localhost:3000/art'
   responsephotography: any;
-
+ 
+  id;
+  art;
   getArtPhotography(): Observable<any> {
     return this.http.get('http://localhost:3000/art/artgenrephotography')
   }
@@ -22,12 +27,13 @@ export class ArtService {
   getArtPainting(): Observable<any> {
     return this.http.get('http://localhost:3000/art/artgenrepaintings')
   }
-  getArtOne(id): Observable<any> {
-    console.log(id);
-    return this.http.get(`http://localhost:3000/art/${id}`)
-  }
   getArtAll(): Observable<any> {
     return this.http.get('http://localhost:3000/art/artgetall')
+  }
+
+  GetArtOne(id): Observable<any> {
+    console.log(id);
+    return this.http.get(`http://localhost:3000/art/${id}`)
   }
 
   createArt(title, artist, price, img, genre, description): any {
@@ -48,6 +54,72 @@ export class ArtService {
     console.log(data)
   })
   }
+ 
+
+    artUpdate(id, title, artist, price, img, genre, description): Observable<any> {
+      //event.preventDefault();
+      const token = localStorage.getItem('token');
+      let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
+      headers.append('Content-Type', 'application/json');
+      headers.append('Authorization', token);
+      console.log(id)
+      console.log(token)
+      console.log(headers)
+      return this.http.put(`http://localhost:3000/art/${id}`, { art: {
+          id,
+          title,
+          artist,
+          price,
+          img,
+          genre,
+          description
+        }}, {headers : headers})
+        
+      }
+  
+    
+  
+  // deleteArt(id): Observable<any> {
+  //   const token = localStorage.getItem('token');
+  //   let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
+  //   headers.append('Content-Type', 'application/json');
+  //   headers.append('Authorization', token);
+  //   console.log(token)
+  //   console.log(headers)
+  //   return this.http.delete(`http://localhost:3000/art/${id}`, {headers: headers})
+  // }
+
+
+  getArtOne(id): Observable<any> {
+    console.log(id);
+    return this.http.get(`http://localhost:3000/art/${id}`)
+  }
+
+
+
+  
+  // getArtAll(): Observable<any> {
+  //   return this.http.get('http://localhost:3000/art/artgetall')
+  // }
+
+//   createArt(title, artist, price, img, genre, description): any {
+//     const token = localStorage.getItem('token');
+//     let headers: HttpHeaders = new HttpHeaders().set("Authorization", token);
+//     headers.append('Content-Type', 'application/json');
+//     headers.append('Authorization', token);
+//     console.log(token)
+//     console.log(headers)
+//   return this.http.post('http://localhost:3000/art/artcreate', {
+//     title,
+//     artist,
+//     price,
+//     img,
+//     genre,
+//     description,
+// }, { headers }).subscribe(data => {
+//     console.log(data)
+//   })
+//   }
  
  
   // artUpdate(title, artist, price, img, genre, description): Observable<void> {
