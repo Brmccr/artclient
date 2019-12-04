@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtService} from '../art.service';
 import { BehaviorSubject } from 'rxjs';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-nav-bar',
@@ -26,6 +27,38 @@ export class NavBarComponent implements OnInit {
   logOut() {
     localStorage.clear();
   }
+
+  isAdmin() {
+    if(localStorage.getItem("token")) {
+      const token = localStorage.getItem('token');
+      const tokenPayload = decode(token);
+      if (tokenPayload.role === "admin") {
+        return true
+    } else {
+        return false
+    }
+    } else {
+        return
+    }
+  }
+
+    isLoggedIn(){
+      if(localStorage.getItem("token")) {
+      const token = localStorage.getItem('token');
+      return true 
+    } else {
+      return false
+    }
+  }
+
+  isLoggedOut(){
+    if(localStorage.getItem("")) {
+    return
+  } else {
+    return true
+  }
+}
+
 
   
 }

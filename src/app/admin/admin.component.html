@@ -1,4 +1,6 @@
-
+<div>
+  <button class="addButton" mat-button type="submit" (click)="openCreate()">Add Art</button>
+</div>
 <div>
 <table class="adminTable">
   <thead>
@@ -18,14 +20,14 @@
   <td>{{ dataSource?.img }}</td>
   <td>{{ dataSource?.genre }}</td>
   <td>{{ dataSource?.description }} </td>
-  <td><button (click)="openUpdate(dataSource)">Update</button></td>
-  <td><a (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</a></td>
+  <td><button class="updateButton" (click)="openUpdate(dataSource)">Update</button></td>
+  <td><button (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</button></td>
   </tr>
   </tbody>
 </table>
 </div>
 
-<div class="form-group" [formGroup]="createForm">
+<!--<div class="form-group" [formGroup]="createForm">
   <h2>Add Art</h2>
   <form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
     <input id="title" formControlName="title" type="text" class="form-control" placeholder="Title">
@@ -38,8 +40,7 @@
   </form>
 </div>
   
-
-<!--<div *ngFor="let dataSource of dataSource">
+<div *ngFor="let dataSource of dataSource">
     <div >
     <h6>Title : {{dataSource?.title}}</h6>
     <form (submit)="updateArt($event)">
@@ -62,66 +63,5 @@
 
 
 
-<<<<<<< HEAD
-<!-- <div>
-    <table class="adminTable">
-      <thead>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>Price</th>
-      <th>Image Url</th>
-      <th>Genre</th>
-      <th>Description</th>
-      
-    </thead>
-    <tbody>
-      <tr *ngFor="let dataSource of dataSource">
-      <td>{{ dataSource?.title }}</td>
-      <td>{{ dataSource?.artist }}</td>
-      <td>{{ dataSource?.price }}</td>
-      <td>{{ dataSource?.img }}</td>
-      <td>{{ dataSource?.genre }}</td>
-      <td>{{ dataSource?.description }} </td>
-      <!-- <td><button [routerLink]="['/update-art/', dataSource.id]">Update</button></td> -->
-      <!-- <td><a (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</a></td>
-      </tr>
-      </tbody>
-    </table>
-    </div>
-    <router-outlet></router-outlet> --> -->
-    
-    <div class="form-group">
-      <h2>Add Art</h2>
-      <form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
-        <input id="title" formControlName="title" type="text" class="form-control" placeholder="Title">
-        <input id="artist" formControlName="artist" type="text" class="form-control" placeholder="Arist">
-        <input id="price" formControlName="price" type="text" class="form-control" placeholder='Price'>
-        <input id="image" formControlName="img" type="text" class="form-control" placeholder="Image Url">
-        <input id="genre" formControlName="genre" type="text" class="form-control" placeholder="Genre">
-        <input id="description" formControlName="description" type="text" class="form-control" placeholder="Description">
-        <button type="submit" [disabled]="!createForm.valid">Submit</button>
-      </form>
-    </div>
-
-    <!-- <div *ngFor="let dataSource of dataSource">
-            <div>
-            <h6>Title : {{dataSource?.title}}</h6>
-            <form (submit)="updateArt(dataSource.id, $event)">
-                            
-                                            <input class="inputs" type="text" placeholder="{{dataSource?.title}}" id="title">
-                                            <input class="inputs" type="text" placeholder="{{dataSource?.artist}}" id="artist">
-                                            <input class="inputs" type="text" placeholder="{{dataSource?.price}}" id="price">
-                                            <input class="inputs" type="text" placeholder="{{dataSource?.img}}" id="img">
-                                            <input class="inputs" type="text" placeholder="{{dataSource?.genre}}" id="genre">
-                                            <input class="inputs" type="text" placeholder="{{dataSource.description}}" id="description">
-                                          
-                                          <input class="btn btn-secondary btn-sm" type="submit" value="Update">
-                                          <a (click)="artDelete(dataSource.id)" class="btn btn-secondary btn-sm">Delete</a>
-
-                    </form>
-    </div>
-    </div> -->
-=======
 
 
->>>>>>> 5e46090bab8f6e2880be71f163f0dc68ae94597a

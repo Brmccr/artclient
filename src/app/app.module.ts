@@ -74,6 +74,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UpdateModalComponent } from './update-modal/update-modal.component';
 //import { AuthGuard } from './guards/auth.guard';
 import { RoleGuardService } from './role-guard.service';
+import { ArtCreateComponent } from './art-create/art-create.component';
 
 
 
@@ -96,7 +97,7 @@ const appRoutes: Routes = [
            // {path: 'update-art/:id', component: UpdateArtComponent}
          // ]
         },
-  {path: 'admin', component: AdminComponent},
+  // {path: 'admin', component: AdminComponent},
   {path: 'profile', component: ProfileComponent}
 ];
 
@@ -124,7 +125,8 @@ const appRoutes: Routes = [
     AdminComponent,
     HomeComponent,
     ProfileComponent,
-    UpdateModalComponent
+    UpdateModalComponent,
+    ArtCreateComponent
     // BrowserModule,
   ],
   imports: [

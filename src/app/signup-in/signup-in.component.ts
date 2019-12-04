@@ -20,8 +20,9 @@ export class SignupInComponent implements OnInit {
     const displayname = target.querySelector('#displayname').value
     const firstname = target.querySelector('#firstname').value
     const lastname = target.querySelector('#lastname').value
+    const role = 'user'
 
-    this.Auth.getUserDetails(username, password, displayname, firstname, lastname).subscribe(res => {
+    this.Auth.getUserDetails(username, password, displayname, firstname, lastname, role).subscribe(res => {
       console.log(res)
       localStorage.setItem('token', res.sessionToken)
     })

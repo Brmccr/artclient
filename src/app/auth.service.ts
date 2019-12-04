@@ -21,14 +21,15 @@ export class AuthService {
   //   return JSON.parse(localStorage.getItem('loggedIn') || this.loggedinStatus.toString())
   // }
   
-  getUserDetails(username, passwordhash, displayname, firstname, lastname):any {
+  getUserDetails(username, passwordhash, displayname, firstname, lastname, role):any {
     //post these details to server and return user info
     return this.http.post(`${APIURL}/user/register`, {
       username,
       passwordhash,
       displayname, 
       firstname,
-      lastname
+      lastname,
+      role
       
     
     })

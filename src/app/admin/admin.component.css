@@ -1,13 +1,24 @@
 .adminTable {
     width: 100%;
     height: 50vh;
-    border: black 2px solid;
+    border: black 2px solid;  
+    background-color: white;  
     
-
-
 }
-.form-group {
-    width: 70%;
-    height: 50vh;
-    border: black 2px solid;
+
+.addButton {
+    background-color: white;
+    border-radius: 0px;
+    opacity: 80%;
+}
+
+.updateButton {
+    border: 1px solid black;
+    
+}
+
+.btn{
+    border-radius: 0px;
+    border: 1px solid black;
+
 }
