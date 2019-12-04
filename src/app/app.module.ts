@@ -90,14 +90,14 @@ const appRoutes: Routes = [
   {path: 'signup-in', component: SignupInComponent},
   {path: 'admin', 
   component: AdminComponent,
-  canActivate: [RoleGuardService],
-          data: {
-            expectedRole: 'admin',},
+  //canActivate: [RoleGuardService],
+         // data: {
+         //  expectedRole: 'admin',},
          // children: [
            // {path: 'update-art/:id', component: UpdateArtComponent}
          // ]
         },
-  {path: 'admin', component: AdminComponent},
+  
   {path: 'profile', component: ProfileComponent}
 ];
 
