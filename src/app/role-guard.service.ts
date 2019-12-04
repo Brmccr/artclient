@@ -23,11 +23,13 @@ export class RoleGuardService implements CanActivate {
     const tokenPayload = decode(token);
     if (
       tokenPayload.role !== expectedRole
-    ) {
+    ) return true; 
       this.router.navigate(['admin']);
+     
       return false;
     }
-    return true;
+    
+    
   }
 
-}
+

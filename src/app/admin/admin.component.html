@@ -1,4 +1,6 @@
-
+<div>
+  <button class="addButton" mat-button type="submit" (click)="openCreate()">Add Art</button>
+</div>
 <div>
 <table class="adminTable">
   <thead>
@@ -18,14 +20,14 @@
   <td>{{ dataSource?.img }}</td>
   <td>{{ dataSource?.genre }}</td>
   <td>{{ dataSource?.description }} </td>
-  <td><button (click)="openUpdate(dataSource)">Update</button></td>
-  <td><a (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</a></td>
+  <td><button class="updateButton" (click)="openUpdate(dataSource)">Update</button></td>
+  <td><button (click) = "artDelete(dataSource.id)" class="btn btn-danger">Delete</button></td>
   </tr>
   </tbody>
 </table>
 </div>
 
-<div class="form-group" [formGroup]="createForm">
+<!--<div class="form-group" [formGroup]="createForm">
   <h2>Add Art</h2>
   <form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
     <input id="title" formControlName="title" type="text" class="form-control" placeholder="Title">
@@ -39,7 +41,7 @@
 </div>
   
 
-<!--<div *ngFor="let dataSource of dataSource">
+<div *ngFor="let dataSource of dataSource">
     <div >
     <h6>Title : {{dataSource?.title}}</h6>
     <form (submit)="updateArt($event)">

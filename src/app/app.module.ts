@@ -48,6 +48,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -70,9 +71,10 @@ import { UpdateArtComponent } from './update-art/update-art.component';
 import { AdminGuardService } from './admin-guard.service';
 
 import { ProfileComponent } from './profile/profile.component';
-import { UpdateModalComponent } from './update-modal/update-modal.component';
+
 //import { AuthGuard } from './guards/auth.guard';
 import { RoleGuardService } from './role-guard.service';
+import { ArtCreateComponent } from './art-create/art-create.component';
 
 
 
@@ -123,7 +125,8 @@ const appRoutes: Routes = [
     AdminComponent,
     HomeComponent,
     ProfileComponent,
-    UpdateModalComponent
+    //UpdateModalComponent,
+    ArtCreateComponent
     // BrowserModule,
   ],
   imports: [
@@ -170,12 +173,13 @@ const appRoutes: Routes = [
     HttpClientModule, 
     ReactiveFormsModule,
     
+    
   
   
     FlexLayoutModule,
     // NgbModal
   ], 
-  entryComponents: [UpdateArtComponent],
+  entryComponents: [UpdateArtComponent, ArtCreateComponent],
   providers: [AdminGuardService, RoleGuardService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

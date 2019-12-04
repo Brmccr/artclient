@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UpdateArtComponent } from '../update-art/update-art.component';
 import { Observable } from 'rxjs';
+import { ArtCreateComponent } from '../art-create/art-create.component'
 
 @Component({
   selector: 'app-admin',
@@ -58,7 +59,18 @@ this._artService.artUpdate(this.id, title, artist, price, img, genre, descriptio
     this._artService.getArtAll().subscribe(res => {this.dataSource = res; console.log(this.dataSource)});
    
   }
-
+  openCreate(): void {
+    const dialogRef = this.dialog.open(ArtCreateComponent, {
+      
+    })
+    dialogRef.afterClosed().subscribe(res => {
+      this.response$ = this._artService.createArt(res.title, res.artist,  res.price, res.img, res.genre, res.description)
+      this.response$.subscribe(res => {
+        console.log(res)
+        this.getArtAll()
+      })
+    })
+  }
   openUpdate(art): void {
     const dialogRef = this.dialog.open(UpdateArtComponent, {
       data: art
