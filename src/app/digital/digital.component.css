@@ -6,6 +6,8 @@
     animation: slideInRight;
     margin: 15px;
     color: white;
+    animation: fadeInRight 1.3s;
+    text-shadow: 0px 0px 28px white;
 }
 .cardInfo{
     border: 10px solid black;
@@ -15,6 +17,7 @@
 }
 mat-card-header{
     text-align: center;
+    /* justify-content: center; */
 }
 mat-card-title{
     text-align: center;
@@ -23,6 +26,7 @@ mat-card-title{
     font-weight: bold;
     letter-spacing: 0.1em;
     color: white;
+    text-shadow: 0px 0px 18px white;
 }
 mat-card-subtitle{
     text-align: center;
@@ -37,6 +41,7 @@ mat-card-subtitle{
   justify-content: space-evenly;
   border: 5px double white;
   margin: 16px;
+  animation: fadeIn 1.3s;
 }
 .cardimg{
     width: 100%;
@@ -46,8 +51,8 @@ mat-card-subtitle{
     border: 4px groove white;
 }
 .example-card{
-    min-width: 310;
-    max-width: 310;
+    min-width: 320;
+    max-width: 320;
     margin: 20px;
     /* padding: 25px; */
     background-color: black;
@@ -67,6 +72,40 @@ p{
     font-family: 'Cinzel', serif;
     color: white;
 }
-button{
-    color: white;
+.button{
+    /* margin-top: 10px;  */
+    color: black;
 }
+.button:hover{
+    transition-duration: 450ms;
+    box-shadow: 0px 0px 20px white;
+    color: white !important;
+    background-color: black;
+}
+mat-star-rating{
+    color: white;
+    font-size: 4px;
+}
+/* .starBtn{
+    margin-left: 32px;
+    margin-bottom: 25px;
+} */
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(10px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ } 

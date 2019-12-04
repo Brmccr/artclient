@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ArtService} from '../art.service';
+// import { JsonPipe } from '@angular/common';
+// import { StarRatingColor } from '../star-rating/star-rating.component';
+
 
 @Component({
   selector: 'app-digital',
@@ -8,34 +11,24 @@ import {ArtService} from '../art.service';
   providers: [ArtService]
 })
 export class DigitalComponent implements OnInit {
+  // rating:number = 3;
+  // starCount:number = 5;
+  // starColor:StarRatingColor = StarRatingColor.accent;
+  // starColorP:StarRatingColor = StarRatingColor.primary;
+  // starColorW:StarRatingColor = StarRatingColor.warn;
+
   responsephotography ;
-  config: any;
-  collection = { count: 10, responsephotography: [] }
   regularDistribution = 100 / 4 + '%';
-  constructor(private _artService: ArtService) {
-    for (let i = 1; i < this.collection.count; i++){
-      this.collection.responsephotography.push(
-        {
-          id: i + 1,
-          value: this.responsephotography + (i + 1)
-        }
-      );
-    }
-
-    this.config = {
-      itemsPerPage: 4,
-      currentPage: 1,
-      totalItems: this.collection.count
-    }
-  }
-
-  pageChanged(event){
-    this.config.currentPage = event;
-  }
+  constructor(private _artService: ArtService) {}
 
   ngOnInit() {
     this.getArtDigital();
   }
+
+  // onRatingChanged(rating){
+  //   console.log(rating);
+  //   this.rating = rating;
+  // }
   
   getArtDigital(): void {
     this._artService.getArtDigital().subscribe(res => {this.responsephotography = res; console.log(this.responsephotography)});

@@ -46,12 +46,13 @@
   a {
     cursor: pointer;
     color: white;
-    background-color: black;
+    background-color: none;
     text-decoration: none;
   }
   
   a:hover {
-    opacity: 0.1;
+    opacity: 1;
+    background-color: none;
   }
   
   /* Input */
@@ -81,13 +82,17 @@
     font-size: 14px;
     cursor: pointer;
     background-color: white;
-    color: white;
+    color: black;
     border: none;
   }
   
   .button:hover, button:hover {
     opacity: 0.8;
     font-weight: normal;
+    transition-duration: 450ms;
+    box-shadow: 0px 0px 20px white;
+    color: white !important;
+    background-color: black;
   }
   
   .button:disabled, button:disabled {
@@ -131,6 +136,10 @@
   app-nav-bar h1 {
     color: white;
     margin: 0;
+  }
+  app-nav-bar h1:hover{
+    transition-duration: 5s;
+  animation: flash infinite;
   }
   
   /* Checkout Cart, Shipping Prices */

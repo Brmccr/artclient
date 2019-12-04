@@ -44,6 +44,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RatingModule } from 'ng-starrating';
 
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -65,6 +66,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UpdateModalComponent } from './update-modal/update-modal.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
+import { NgbdRatingBasic } from './rating/rating.component';
 
 
 
@@ -97,7 +100,8 @@ const appRoutes: Routes = [
     AdminComponent,
     HomeComponent,
     ProfileComponent,
-    UpdateModalComponent
+    UpdateModalComponent,
+    StarRatingComponent,
     // BrowserModule,
   ],
   imports: [
@@ -143,7 +147,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule, 
     FlexLayoutModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RatingModule
     // NgbModal
   ],
   providers: [],

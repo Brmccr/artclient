@@ -28,6 +28,7 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "mdbootstrap": "^4.9.0",
+    "ng-starrating": "^1.0.9",
     "ngx-pagination": "^5.0.0",
     "popper.js": "^1.16.0",
     "rxjs": "~6.4.0",
