@@ -60,6 +60,7 @@ import { DigitalComponent } from './digital/digital.component';
 import { PaintingComponent } from './painting/painting.component';
 import { DrawingComponent } from './drawing/drawing.component';
 import { AdminComponent } from '../app/admin/admin.component';
+import { CartComponent} from '../app/cart/cart.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -115,7 +116,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SignupInComponent,
     UpdateArtComponent,
-    
+    CartComponent,
   
     
     
