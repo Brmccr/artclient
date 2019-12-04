@@ -178,7 +178,7 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     // NgbModal
   ], 
-  entryComponents: [UpdateArtComponent],
+  entryComponents: [UpdateArtComponent, ArtCreateComponent],
   providers: [AdminGuardService, RoleGuardService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
