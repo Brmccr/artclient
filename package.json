@@ -27,6 +27,7 @@
     "angular-bootstrap-md": "^8.6.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "jwt-decode": "^2.2.0",
     "mdbootstrap": "^4.9.0",
     "ng-starrating": "^1.0.9",
     "ngx-pagination": "^5.0.0",

@@ -43,8 +43,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { RatingModule } from 'ng-starrating';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+// import { NgxPaginationModule } from 'ngx-pagination';
+// import { RatingModule } from 'ng-starrating';
 
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -66,8 +68,10 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UpdateModalComponent } from './update-modal/update-modal.component';
-import { StarRatingComponent } from './star-rating/star-rating.component';
-import { NgbdRatingBasic } from './rating/rating.component';
+// import { StarRatingComponent } from './star-rating/star-rating.component';
+// import { NgbdRatingBasic } from './rating/rating.component';
+import { ArtCreateComponent } from './art-create/art-create.component';
+import { UpdateArtComponent } from './update-art/update-art.component';
 
 
 
@@ -80,6 +84,15 @@ const appRoutes: Routes = [
   {path: 'painting', component: PaintingComponent},
   {path: 'drawing', component: DrawingComponent},
   {path: 'signup-in', component: SignupInComponent},
+  // {path: 'admin', 
+  // component: AdminComponent,
+  // canActivate: [RoleGuardService],
+  //         data: {
+  //           expectedRole: 'admin',},
+  //        children: [
+  //          {path: 'update-art/:id', component: UpdateArtComponent}
+  //        ]
+  //       },
   {path: 'admin', component: AdminComponent},
   {path: 'profile', component: ProfileComponent}
 ];
@@ -101,7 +114,9 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     UpdateModalComponent,
-    StarRatingComponent,
+    // StarRatingComponent,
+    ArtCreateComponent,
+    UpdateArtComponent,
     // BrowserModule,
   ],
   imports: [
@@ -146,13 +161,14 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule, 
-    FlexLayoutModule,
-    NgxPaginationModule,
-    RatingModule
+    ReactiveFormsModule,
+    FlexLayoutModule
     // NgbModal
   ],
+  entryComponents: [UpdateArtComponent, ArtCreateComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class AppModule { }

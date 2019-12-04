@@ -1,0 +1,87 @@
+h2{
+    font-size: 40px;
+    font-weight: 550;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.2em;
+    animation: slideInRight;
+    margin: 15px;
+    color: white;
+    animation: fadeInRight 1.3s;
+    text-shadow: 0px 0px 28px white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.createModal{
+    color: white;
+    background-image: linear-gradient(to right, black, white);
+    padding: 50px;
+    display: block;
+    height: 100vh;
+    width: 60vw;
+}
+.button{ 
+    color: black;
+    background-color: white;
+    margin: 5px;
+    font-family: 'Cinzel', serif;
+}
+.button:hover{
+    animation: pulse 3.5s infinite;
+    box-shadow: 0px 0px 20px white;
+    color: white;
+    background-color: black;
+}
+.form-control{
+    margin: 15px;
+    padding: 10px;
+    width: 60%;
+    animation: fadeIn 1.3s;
+}
+.createForm{
+    display: block;
+    /* margin: 10px; */
+}
+mat-form-field{
+    display: block;
+    padding: 15px;
+}
+mat-label{
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 470;
+    padding: 10px;
+    margin: 10px;
+    animation: fadeIn 1.3s;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(10px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+ 
+ @keyframes pulse {
+    0% {
+      transform: scale(1.0);
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  } 

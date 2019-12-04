@@ -91,7 +91,7 @@
     font-weight: normal;
     transition-duration: 450ms;
     box-shadow: 0px 0px 20px white;
-    color: white !important;
+    color: white;
     background-color: black;
   }
   
