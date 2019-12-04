@@ -18,7 +18,7 @@
     </div>
   </div>
   <a [routerLink]="['/signup-in']"class="button fancy-button"><i class="material-icons"></i>SignUp/SignIn</a>
-  <div>
+  <div *ngIf="isAdmin()">
   <a [routerLink]="['/admin']"class="button fancy-button"><i class="material-icons"></i>Admin</a>
 </div>
   <a [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i></a>
