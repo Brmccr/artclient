@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs"
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Art } from './art.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtService {
-  constructor(private http: HttpClient) {}
-
+  constructor(private http: HttpClient,
+              private route: ActivatedRoute) {}
+  baseUrl= 'http://localhost:3001/art'
   responsephotography: any;
-
+ 
+  id;
+  art;
   getArtPhotography(): Observable<any> {
     return this.http.get('http://localhost:3001/art/artgenrephotography')
   }
@@ -29,6 +34,7 @@ export class ArtService {
   getArtAll(): Observable<any> {
     return this.http.get('http://localhost:3001/art/artgetall')
   }
+
   GetArtOne(id): Observable<any> {
     console.log(id);
     return this.http.get(`http://localhost:3001/art/${id}`)

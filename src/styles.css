@@ -11,7 +11,7 @@
   
   body {
     margin: 0;
-    background-image: linear-gradient(to right, black, white);
+    background-image: linear-gradient(to right, black, grey);
   }
   
   .container {

@@ -28,12 +28,12 @@ export class UpdateArtComponent implements OnInit {
     console.log(this.data)
     this.updateForm = this._fb.group({
       id: this.data.id,
-      title: this.data.title,
-      artist: this.data.artist,
-      price: this.data.price,
-      img: this.data.img,
-      genre: this.data.genre,
-      description: this.data.description
+      title: new FormControl(this.data.title),
+      artist: new FormControl(this.data.artist),
+      price: new FormControl(this.data.price),
+      img: new FormControl(this.data.img),
+      genre: new FormControl(this.data.genre),
+      description: new FormControl(this.data.description)
     })
    
 

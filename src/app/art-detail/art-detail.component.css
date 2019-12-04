@@ -30,6 +30,7 @@
     color: white;
     /* margin: 25px; */
     text-decoration: underline;
+    animation: fadeInLeft 1.3s;
 }
 .column{
     float: left;
@@ -63,6 +64,7 @@ p{
     text-align: left;
     color: white;
     margin-left: 25px;
+    animation: fadeInRight 1.3s;
 }
 .commentButton{
     width: inherit;
@@ -81,8 +83,11 @@ p{
     margin: 5px;
 }
 p{
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 450;
 }
 .comment{
     width: 40%;
@@ -108,3 +113,14 @@ p{
        transform: translateX(0);
     }
  }
+
+ @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-10px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }   

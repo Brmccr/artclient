@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -19,15 +19,18 @@ export class AuthService {
   // get isLoggedIn() {
   //   return JSON.parse(localStorage.getItem('loggedIn') || this.loggedinStatus.toString())
   // }
-
-  getUserDetails(username, password, displayname, firstname, lastname):any {
+  
+  getUserDetails(username, passwordhash, displayname, firstname, lastname, role):any {
     //post these details to server and return user info
     return this.http.post('http://localhost:3001/user/register', {
       username,
-      password,
-      displayname,
+      passwordhash,
+      displayname, 
       firstname,
-      lastname
+      lastname,
+      role
+      
+    
     })
   }
   getUserSignIn(username, password):any {
@@ -36,5 +39,7 @@ export class AuthService {
       password
     })
   }
+ 
+    
   
 }

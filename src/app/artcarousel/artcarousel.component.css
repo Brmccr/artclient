@@ -4,6 +4,7 @@ mdb-carousel{
 .carousel{
     border-top: 5px solid white;
     border-bottom: 5px solid white;
+    animation: fadeIn 1.3s;
 }
 /* #img{
     object-fit: cover;
@@ -11,4 +12,10 @@ mdb-carousel{
 } */
 mdb-carousel-item{
     cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

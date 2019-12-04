@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ArtService} from '../art.service';
+import { ArtService } from '../art.service';
 
 
 @Component({

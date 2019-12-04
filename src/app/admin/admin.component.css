@@ -1,0 +1,102 @@
+.adminTitle{
+    font-size: 40px;
+    font-weight: 550;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.2em;
+    margin: 15px;
+    color: white;
+    animation: fadeInRight 1.3s;
+    text-shadow: 0px 0px 28px white;
+}
+.adminTable {
+    margin-left: 15px;
+    height: 50vh;
+    border: white groove 5px;  
+    background-image: linear-gradient( black, grey);
+    width: 90vw;
+    animation: fadeIn 1.3s;
+    /* border-top: white groove 5px; */
+}
+
+
+th{
+    font-size: 20px;
+    font-weight: 550;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.2em;
+    padding: 15px;
+    color: white;
+    text-shadow: 0px 0px 28px white;
+    text-align: center;
+    /* margin: 25px; */
+}
+td{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.1em;
+    padding: 10px;
+    color: white;
+    text-shadow: 0px 0px 28px white;
+    margin: 15px;
+    text-align: center;
+}
+
+.addButton {
+    background-color: white;
+    color: black;
+    border-radius: 0px;
+    opacity: 80%;
+    margin: 15px;
+    font-family: 'Cinzel', serif;
+    animation: fadeIn 1.3s;
+}
+.addButton:hover{
+    transition-duration: 450ms;
+    box-shadow: 0px 0px 20px white;
+    animation: pulse 3s infinite;
+}
+
+.updateButton {
+    background-color: white;
+    color: black;  
+}
+.updateButton:hover{
+    transition-duration: 450ms;
+    box-shadow: 0px 0px 30px white;
+    animation: pulse 3s infinite;
+}
+
+#deleteButton:hover{
+    transition-duration: 450ms;
+    box-shadow: 0px 0px 20px red;
+    animation: pulse 3s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(10px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ } 
+ @keyframes pulse {
+    0% {
+      transform: scale(1.0);
+    }
+    50%{
+        transform: scale(0.7);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }

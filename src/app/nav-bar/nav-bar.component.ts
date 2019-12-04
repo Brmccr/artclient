@@ -11,7 +11,8 @@ import { BehaviorSubject } from 'rxjs';
 export class NavBarComponent implements OnInit {
   
   responsephotography ;
-  constructor(private _artService: ArtService) {}
+  constructor(private _artService: ArtService,
+            ) {}
   
   ngOnInit() {
   }

@@ -104,3 +104,16 @@ this._artService.artUpdate(this.id, title, artist, price, img, genre, descriptio
 }
   
 }
+
+
+
+ 
+
+
+
+
+   
+  
+
+
+
