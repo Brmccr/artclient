@@ -11,7 +11,7 @@ import { APIURL } from '../environments/environment.prod';
 export class ArtService {
   constructor(private http: HttpClient,
               private route: ActivatedRoute) {}
-  baseUrl= 'http://localhost:3000/art'
+  baseUrl= `${APIURL}/art`
   responsephotography: any;
  
   id;
@@ -34,7 +34,7 @@ export class ArtService {
 
   GetArtOne(id): Observable<any> {
     console.log(id);
-    return this.http.get(`http://localhost:3000/art/${id}`)
+    return this.http.get(`${APIURL}/art/${id}`)
   }
 
   createArt(title, artist, price, img, genre, description): any {
@@ -66,7 +66,7 @@ export class ArtService {
       console.log(id)
       console.log(token)
       console.log(headers)
-      return this.http.put(`http://localhost:3000/art/${id}`, { art: {
+      return this.http.put(`${APIURL}/art/${id}`, { art: {
           id,
           title,
           artist,
@@ -93,7 +93,7 @@ export class ArtService {
 
   getArtOne(id): Observable<any> {
     console.log(id);
-    return this.http.get(`http://localhost:3000/art/${id}`)
+    return this.http.get(`${APIURL}/art/${id}`)
   }
 
 

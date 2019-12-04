@@ -3,6 +3,8 @@ import {Observable} from "rxjs"
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Art } from './art.model';
 import { ActivatedRoute } from '@angular/router';
+import { APIURL } from '../environments/environment.prod';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ArtUpdateService {
   constructor(private http: HttpClient,
     private route: ActivatedRoute) {}
-    baseUrl= 'http://localhost:3000/art'
+    baseUrl= `${APIURL}/art`
     responsephotography: any;
     id;
 }
