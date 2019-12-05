@@ -1,4 +1,67 @@
 <div class="row">
+    <div class="column">
+  <h1 class="detailTitle">{{responseart[0]?.title}}</h1>
+  <img class="cardimg" mat-card-image src="{{responseart[0]?.img}}" alt=""/>
+  <p>Artist: {{responseart[0].artist}}</p>
+  <p>Price: ${{responseart[0].price}}</p>
+  <p>Genre: {{responseart[0].genre}}</p>
+  <p>Description: {{responseart[0].description}}</p>
+  </div>
+  <br/>
+  <div class="column">
+  <h1 class="commentTitle">Add a Comment: </h1>
+  <form (submit)="submitComment($event)">
+      <input type="text" placeholder="Type Your Comment Here" id="paragraph">
+      <br/>
+      <input class="commentButton" type="submit" value="Submit">
+      </form>
+      <br/>
+  <h1 class="commentTitle">Comments: </h1>
+  <div class="comments-list" id="comments-list">  
+  <p>{{responseart[0].comments[0]?.paragraph}}</p>
+  <p>{{responseart[0].comments[1]?.paragraph}}</p>
+  <p>{{responseart[0].comments[2]?.paragraph}}</p>
+  <p>{{responseart[0].comments[3]?.paragraph}}</p>
+  <p>{{responseart[0].comments[4]?.paragraph}}</p>
+  <p>{{responseart[0].comments[5]?.paragraph}}</p>
+  <!-- <br/>
+  <p>{{responseart[0].comments[0]?.paragraph}}</p>
+  <br/>
+  <p>{{responseart[0].comments[0]?.paragraph}}</p>
+  <br/>
+  <p>{{responseart[0].comments[0]?.paragraph}}</p>
+  <br/>
+  <p>{{responseart[0].comments[0]?.paragraph}}</p> -->
+  </div>
+  </div>
+  <!-- <div class="imgcards">
+      <div *ngFor="let response of responseart">
+          <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{title}}</mat-card-title>
+                <mat-card-subtitle>{{artist}}</mat-card-subtitle>
+              </mat-card-header>
+              <img class="cardimg" mat-card-image src="{{response?.img}}" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>{{response?.price}}</p>
+                <p>Genre: Digital Art</p>
+                <p>{{response?.description}}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button [routerLink]="['/detail']" mat-button>More Details</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+            </div>
+          </div> -->
+
+
+
+
+
+
+<!-- <div class="row">
   <div class="column">
 <h1 class="detailTitle">{{responseart[0]?.title}}</h1>
 <img class="cardimg" mat-card-image src="{{responseart[0]?.img}}" alt=""/>
@@ -9,16 +72,17 @@
 </div>
 <br/>
 <div class="column">
-<h1 class="commentTitle">Comments: {{responseart[0].comments[0]?.paragraph}}</h1>
+<h1 class="commentTitle">Comments:</h1>
 <form (submit)="submitComment($event)">
     <input type="text" placeholder="Type Your Comment Here" id="paragraph">
     <input type="submit" value="submit">
     </form>
-<h1>Comments: {{responseart[0].comments[0]?.paragraph}}</h1>
+<h1 class="commentTitle"></h1>
+{{responseart[0].comments[0]?.paragraph}}
 {{responseart[0].comments[1]?.paragraph}}
 {{responseart[0].comments[2]?.paragraph}}
 </div>
-</div>
+</div> -->
 <!-- <div class="imgcards">
     <div *ngFor="let response of responseart">
         <mat-card class="example-card">

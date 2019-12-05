@@ -1,4 +1,67 @@
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Baskervville|Cinzel&display=swap');
+  </style>
+  
+  
+  <nav class="navbar">
+    <a [routerLink]="['/']"><h1>Art Department</h1></a>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Genres
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a [routerLink]="['/digital']" class="button fancy-button" (click)="getArtDigital()"><i class="material-icons"></i>Digital Art</a>
+        <a [routerLink]="['/photography']"class="button fancy-button" (click)="getArtPhotography()"><i class="material-icons"></i>Photography</a>
+        <a [routerLink]="['/painting']"class="button fancy-button"><i class="material-icons"></i>Paintings</a>
+        <a [routerLink]="['/drawing']" class="button fancy-button"><i class="material-icons"></i>Drawings</a>
+      </div>
+    </div>
+    <div *ngIf="!isLoggedIn()">
+    <a [routerLink]="['/signup-in']"class="button fancy-button"><i class="material-icons"></i>SignUp/SignIn</a>
+  </div>
+    <div>
+        <div *ngIf="isAdmin()">
+    <a [routerLink]="['/admin']"class="button fancy-button"><i class="material-icons"></i>Admin</a>
+    </div>
+  </div>
+    <a [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i></a>
+    <!-- <div *ngIf="getlocalStorage(key) === 'token'"> -->
+        <div *ngIf="isLoggedIn()">
+    <a [routerLink]="['/profile']" class="button fancy-button"><i class="material-icons"></i>My Profile</a>
+    </div>
+    <div *ngIf="isLoggedIn()">
+    <a [routerLink]="['/']" class="button fancy-button" (click)="logOut()"><i class="material-icons"></i>LogOut</a>
+  </div>
+    <!-- <button class= "selectbutton" mat-raised-button (click)="getArtDigital()">Get Digital</button> -->
+   
+  
+    </nav>
+  
+    <!-- <div *ngFor="let responsephotography of responsephotography">
+      <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{responsephotography?.title}}</mat-card-title>
+            <mat-card-subtitle>{{responsephotography?.artist}}</mat-card-subtitle>
+          </mat-card-header>
+          <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>{{responsephotography?.price}}</p>
+            <p>Genre: Digital Art</p>
+            <p>{{responsephotography?.description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button [routerLink]="['/detail']" mat-button>More Details</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card> -->
+
+
+
+
+
+<!-- <style>
   @import url('https://fonts.googleapis.com/css?family=Baskervville|Cinzel&display=swap');
 </style>
 
@@ -24,33 +87,13 @@
   <a [routerLink]="['/admin']"class="button fancy-button"><i class="material-icons"></i>Admin</a>
 </div>
   <a [routerLink]="['/cart']" class="button fancy-button"><i class="material-icons">shopping_cart</i></a>
-  <!-- <div *ngIf="getlocalStorage(key) === 'token'"> -->
     <div *ngIf="isLoggedIn()">
   <a [routerLink]="['/profile']" class="button fancy-button"><i class="material-icons"></i>My Profile</a>
 </div>
 <div *ngIf="isLoggedIn()">
   <a [routerLink]="['/']" class="button fancy-button" (click)="logOut()"><i class="material-icons"></i>LogOut</a>
 </div>
-  <!-- <button class= "selectbutton" mat-raised-button (click)="getArtDigital()">Get Digital</button> -->
  
 
-  </nav>
+  </nav> -->
 
-  <!-- <div *ngFor="let responsephotography of responsephotography">
-    <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{responsephotography?.title}}</mat-card-title>
-          <mat-card-subtitle>{{responsephotography?.artist}}</mat-card-subtitle>
-        </mat-card-header>
-        <img class="cardimg" mat-card-image src="{{responsephotography?.img}}" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>{{responsephotography?.price}}</p>
-          <p>Genre: Digital Art</p>
-          <p>{{responsephotography?.description}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button [routerLink]="['/detail']" mat-button>More Details</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card> -->
